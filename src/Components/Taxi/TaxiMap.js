@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { MapContainer, TileLayer, useMap, Marker, Popup } from "react-leaflet";
 import "./taxi.css";
 
-const TaxiMap = (props) => {
-  const defaultCenter = [1.3521, 103.8198];
-  const defaultZoom = 12;
-  const { taxiStands } = props;
-  const taxiStandsElements = taxiStands.map((taxiStand) => {
+const TaxiMap = ({
+  taxiStands,
+  filteredTaxiStands,
+  searchText,
+  coordinates,
+}) => {
+  const [mapCenter, setMapCenter] = useState([1.3521, 103.8198]);
+  const [defaultZoom, setDefaultZoom] = useState(12);
+
+  // create markers for all taxi stands
+  const allTaxiStandsElements = taxiStands.map((taxiStand) => {
     return (
       <Marker
         key={taxiStand.TaxiCode}
@@ -22,10 +28,29 @@ const TaxiMap = (props) => {
     );
   });
 
+  // create markers for filtered taxi stands (if any)
+  const searchTaxiStandsElements = filteredTaxiStands.map((taxiStand) => {
+    return (
+      <Marker
+        key={taxiStand.TaxiCode}
+        position={[taxiStand.Latitude, taxiStand.Longitude]}
+      >
+        <Popup>
+          <div>
+            <h2>{taxiStand.TaxiCode}</h2>
+            <p>{taxiStand.Name}</p>
+          </div>
+        </Popup>
+      </Marker>
+    );
+  });
+
+  // set map center to coordinates if available
+
   return (
     <div className="leaflet-container">
       <MapContainer
-        center={defaultCenter}
+        center={mapCenter}
         zoom={defaultZoom}
         scrollWheelZoom={true}
       >
@@ -33,7 +58,7 @@ const TaxiMap = (props) => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {taxiStandsElements}
+        {coordinates ? searchTaxiStandsElements : allTaxiStandsElements}
       </MapContainer>
     </div>
   );
