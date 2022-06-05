@@ -1,8 +1,23 @@
 import React from "react";
 
-const TaxiList = (props) => {
-  const { taxiStands } = props;
-  const taxiStandsElements = taxiStands.map((taxiStand) => {
+const TaxiList = ({
+  taxiStands,
+  filteredTaxiStands,
+  searchText,
+  coordinates,
+}) => {
+  //create table rows for all taxi stands
+  const allTaxiStandsElements = taxiStands.map((taxiStand) => {
+    return (
+      <tr key={taxiStand.TaxiCode}>
+        <td>{taxiStand.Name}</td>
+        <td>{taxiStand.TaxiCode}</td>
+      </tr>
+    );
+  });
+
+  //create table rows for filtered taxi stands (if any)
+  const searchTaxiStandsElements = filteredTaxiStands.map((taxiStand) => {
     return (
       <tr key={taxiStand.TaxiCode}>
         <td>{taxiStand.Name}</td>
@@ -18,7 +33,9 @@ const TaxiList = (props) => {
           <th>Taxi Code</th>
         </tr>
       </thead>
-      <tbody>{taxiStandsElements}</tbody>
+      <tbody>
+        {coordinates ? searchTaxiStandsElements : allTaxiStandsElements}
+      </tbody>
     </table>
   );
 };
