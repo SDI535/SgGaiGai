@@ -17,10 +17,16 @@ const TaxiMap = ({
 
   // set newmapCenter and defaultZoom
   useEffect(() => {
-    setMapCenter(coordinates);
-    setDefaultZoom(14);
+    if (coordinates === null) {
+      setMapCenter([1.3521, 103.8198]);
+      setDefaultZoom(12);
+    } else {
+      setMapCenter(coordinates);
+      setDefaultZoom(14);
+    }
   }, [coordinates]);
 
+  //React Leaflet hook
   function SetMap({ mapCenter, defaultZoom }) {
     const map = useMap();
     if (mapCenter) {
