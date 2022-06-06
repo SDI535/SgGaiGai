@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import NOMINATIMAPI from "./NOMINATIMAPI";
+import NOMINATIMAPI from "../API/NOMINATIMAPI";
 const SearchForm = ({
   setSearchParam,
   setCoordinatesParam,

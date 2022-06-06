@@ -10,6 +10,7 @@ const TaxiMap = ({
 }) => {
   const [mapCenter, setMapCenter] = useState([1.3521, 103.8198]);
   const [defaultZoom, setDefaultZoom] = useState(12);
+  const mapRef = useRef();
 
   // create markers for all taxi stands
   const allTaxiStandsElements = taxiStands.map((taxiStand) => {
@@ -50,6 +51,7 @@ const TaxiMap = ({
   return (
     <div className="leaflet-container">
       <MapContainer
+        ref={mapRef}
         center={mapCenter}
         zoom={defaultZoom}
         scrollWheelZoom={true}
