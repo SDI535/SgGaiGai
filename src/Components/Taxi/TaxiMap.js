@@ -1,16 +1,28 @@
 import React, { useState, useEffect, useRef } from "react";
+import L from "leaflet";
 import { MapContainer, TileLayer, useMap, Marker, Popup } from "react-leaflet";
 import "./taxi.css";
+import pin from "./Static/Icons/pin.png";
+import taxiIcon from "./Static/Icons/taxi.png";
+import taxiStop from "./Static/Icons/taxi-stop.png";
 
 const TaxiMap = ({
   taxiStands,
   filteredTaxiStands,
-  searchText,
   coordinates,
+  availableTaxisCount,
 }) => {
   const [mapCenter, setMapCenter] = useState([1.3521, 103.8198]);
   const [defaultZoom, setDefaultZoom] = useState(12);
   const mapRef = useRef();
+
+  //custom marker
+  const GetIcon = (_iconUrl, _iconSize) => {
+    return L.icon({
+      iconUrl: _iconUrl,
+      iconSize: _iconSize,
+    });
+  };
 
   // create markers for all taxi stands
   const allTaxiStandsElements = taxiStands.map((taxiStand) => {
@@ -18,6 +30,7 @@ const TaxiMap = ({
       <Marker
         key={taxiStand.TaxiCode}
         position={[taxiStand.Latitude, taxiStand.Longitude]}
+        icon={GetIcon(taxiStop, [32, 32])}
       >
         <Popup>
           <div>
@@ -30,11 +43,12 @@ const TaxiMap = ({
   });
 
   // create markers for filtered taxi stands (if any)
-  const searchTaxiStandsElements = filteredTaxiStands.map((taxiStand) => {
+  const filteredTaxiStandsElements = filteredTaxiStands.map((taxiStand) => {
     return (
       <Marker
         key={taxiStand.TaxiCode}
         position={[taxiStand.Latitude, taxiStand.Longitude]}
+        icon={GetIcon(taxiStop, [32, 32])}
       >
         <Popup>
           <div>
@@ -46,12 +60,22 @@ const TaxiMap = ({
     );
   });
 
+  // create markers for nearby available taxis (if any)
+  const availableNearbyTaxisElements = availableTaxisCount.map((taxi) => {
+    return (
+      <Marker
+        key={taxi.Latitude}
+        position={[taxi.Latitude, taxi.Longitude]}
+        icon={GetIcon(taxiIcon, [32, 32])}
+      ></Marker>
+    );
+  });
+
   // set map center to coordinates if available
 
   return (
     <div className="leaflet-container">
       <MapContainer
-        ref={mapRef}
         center={mapCenter}
         zoom={defaultZoom}
         scrollWheelZoom={true}
@@ -60,7 +84,11 @@ const TaxiMap = ({
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {coordinates ? searchTaxiStandsElements : allTaxiStandsElements}
+        {coordinates && (
+          <Marker position={coordinates} icon={GetIcon(pin, [32, 32])}></Marker>
+        )}
+        {coordinates ? filteredTaxiStandsElements : allTaxiStandsElements}
+        {availableTaxisCount.length > 0 ? availableNearbyTaxisElements : null}
       </MapContainer>
     </div>
   );
