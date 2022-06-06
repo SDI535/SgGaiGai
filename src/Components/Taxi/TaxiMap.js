@@ -14,7 +14,19 @@ const TaxiMap = ({
 }) => {
   const [mapCenter, setMapCenter] = useState([1.3521, 103.8198]);
   const [defaultZoom, setDefaultZoom] = useState(12);
-  const mapRef = useRef();
+
+  // set newmapCenter and defaultZoom
+  useEffect(() => {
+    setMapCenter(coordinates);
+    setDefaultZoom(14);
+  }, [coordinates]);
+
+  function SetMap({ mapCenter, defaultZoom }) {
+    const map = useMap();
+    if (mapCenter) {
+      map.setView(mapCenter, defaultZoom, { animate: true });
+    }
+  }
 
   //custom marker
   const GetIcon = (_iconUrl, _iconSize) => {
@@ -71,8 +83,6 @@ const TaxiMap = ({
     );
   });
 
-  // set map center to coordinates if available
-
   return (
     <div className="leaflet-container">
       <MapContainer
@@ -80,6 +90,7 @@ const TaxiMap = ({
         zoom={defaultZoom}
         scrollWheelZoom={true}
       >
+        <SetMap mapCenter={mapCenter} defaultZoom={defaultZoom} />
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
