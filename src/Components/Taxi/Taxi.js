@@ -7,6 +7,8 @@ import SearchForm from "./SearchForm";
 
 const Taxi = () => {
   const [taxiStands, setTaxiStands] = useState([]);
+  const [availableTaxis, setAvailableTaxis] = useState([]);
+  const [availableTaxisCount, setAvailableTaxisCount] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [coordinates, setCoordinates] = useState(null);
   const [filteredTaxiStands, setFilteredTaxiStands] = useState([]);
@@ -24,18 +26,37 @@ const Taxi = () => {
     fetchData();
   }, []);
 
-  // set query param from search form
+  // fetch taxi available from LTA API
+  useEffect(() => {
+    const fetchAvailableTaxis = async () => {
+      try {
+        const response = await LTAAPI.get("/Taxi-Availability");
+        setAvailableTaxis(response.data.value);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchAvailableTaxis();
+    setInterval(() => {
+      fetchAvailableTaxis();
+    }, 60000); // update every 60 seconds
+  }, []);
+
+  // set search param from search form
   const setSearchParam = (params) => {
     setSearchText(params);
   };
 
+  // set coordinates param through nomatim api in searchform
   const setCoordinatesParam = (coordinates) => {
     setCoordinates(coordinates);
   };
 
+  // reset to see all taxi stands
   const resetSearch = () => {
     setCoordinates(null);
     setSearchText("");
+    setAvailableTaxisCount([]);
   };
 
   //haversine formula in km
@@ -54,7 +75,7 @@ const Taxi = () => {
     return d;
   };
 
-  // filter results by coordinates, nearest 2km using haversine formula
+  // filter taxistand results by coordinates, nearest 2km using haversine formula
   useEffect(() => {
     if (coordinates) {
       let matches = [];
@@ -74,7 +95,25 @@ const Taxi = () => {
     }
   }, [coordinates]);
 
-  console.log(filteredTaxiStands);
+  //count available taxis, nearest 2km to search Location using haversine formula
+  useEffect(() => {
+    if (coordinates) {
+      let matches = [];
+      availableTaxis.forEach((taxi) => {
+        const { Latitude, Longitude } = taxi;
+        const distance = haversine(
+          coordinates[0],
+          coordinates[1],
+          Latitude,
+          Longitude
+        );
+        if (distance <= 2) {
+          matches.push(taxi);
+        }
+      });
+      setAvailableTaxisCount(matches);
+    }
+  }, [coordinates]);
 
   return (
     <div>
@@ -98,7 +137,7 @@ const Taxi = () => {
           <TaxiMap
             taxiStands={taxiStands}
             filteredTaxiStands={filteredTaxiStands}
-            searchText={searchText}
+            availableTaxisCount={availableTaxisCount}
             coordinates={coordinates}
           />
         </Route>
@@ -106,7 +145,7 @@ const Taxi = () => {
           <TaxiList
             taxiStands={taxiStands}
             filteredTaxiStands={filteredTaxiStands}
-            searchText={searchText}
+            availableTaxisCount={availableTaxisCount}
             coordinates={coordinates}
           />
         </Route>
