@@ -3,8 +3,8 @@ import React from "react";
 const TaxiList = ({
   taxiStands,
   filteredTaxiStands,
-  searchText,
   coordinates,
+  availableTaxisCount,
 }) => {
   //create table rows for all taxi stands
   const allTaxiStandsElements = taxiStands.map((taxiStand) => {
@@ -26,17 +26,22 @@ const TaxiList = ({
     );
   });
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>Location</th>
-          <th>Taxi Code</th>
-        </tr>
-      </thead>
-      <tbody>
-        {coordinates ? searchTaxiStandsElements : allTaxiStandsElements}
-      </tbody>
-    </table>
+    <div className="taxi-list">
+      {coordinates ? (
+        <h3>Available Taxis Nearby: {availableTaxisCount.length}</h3>
+      ) : null}
+      <table>
+        <thead>
+          <tr>
+            <th>Location</th>
+            <th>Taxi Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          {coordinates ? searchTaxiStandsElements : allTaxiStandsElements}
+        </tbody>
+      </table>
+    </div>
   );
 };
 
