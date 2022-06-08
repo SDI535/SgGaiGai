@@ -1,5 +1,7 @@
 import React from "react";
 import Taxi from "../../Components/Taxi/Taxi";
+import Bus from "../../Components/Bus/Bus";
+import Car from "../../Components/Car/Car";
 
 const ListView = (props) => {
   const { tabId } = props;
@@ -15,7 +17,7 @@ const ListView = (props) => {
       return <div>Train List</div>;
       break;
     case "Bus":
-      return <div>Bus List</div>;
+      return <Bus isListView={isListView} />;
   }
 };
 
