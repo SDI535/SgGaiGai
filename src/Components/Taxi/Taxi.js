@@ -117,13 +117,13 @@ const Taxi = () => {
 
   return (
     <div>
-      <div>
+      <div className="Title">
         <h1>Taxis</h1>
-        <NavLink to="/taxi/mapview">
-          <button>Map View</button>
+        <NavLink to="/taxi/mapview" activeClassName="active">
+          Map View
         </NavLink>
-        <NavLink to="/taxi/listview">
-          <button>List View</button>
+        <NavLink to="/taxi/listview" activeClassName="active">
+          List View
         </NavLink>
         <SearchForm
           setSearchParam={setSearchParam}

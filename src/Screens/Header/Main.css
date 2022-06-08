@@ -15,12 +15,11 @@ a:-webkit-any-link {
 }
 
 body {
-    /* height: 100vh; */
     min-height: 100vh;
-    position: relative;
-    padding-bottom: 15%;
+    position: static;
+    /* padding-bottom: 15%; */
     mix-blend-mode: normal;
-    background-image: linear-gradient(130deg, rgba(246, 247, 243, 0.33) 4.41%, #FFFCEB 35.33%, rgba(226, 253, 250, 0.97) 76.09%);
+    background-image: linear-gradient(90deg, rgb(255, 255, 255) 4.41%, #faf6e2 35.33%, rgba(232, 251, 249, 0.97) 76.09%);
 }
 
 .Header {
@@ -74,7 +73,7 @@ body {
 }
 
 .Footer {
-    position: absolute;
+    position:static;
     justify-content: center;
     display: flex;
     padding: 1.5%;
@@ -84,6 +83,7 @@ body {
     bottom:0;
     right: 0;
     background: linear-gradient(90.7deg, #910A0A -3.04%, #820C0C 90.66%);
+    margin-top: 5%;
 }
 
 .Intro1 {
@@ -116,7 +116,297 @@ body {
 }
 
 .leaflet-container {
-    width: 100%;
-    height: 600px;
+    width: 92%;
+    height: 500px;
     background: none;
   }
+
+.taxi-list {
+    text-align: left;
+    margin-top: 2%;
+    font-size: 15px;
+    border-collapse: collapse;
+}
+
+.taxi-list td, .taxi-list th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.taxi-list tr:nth-child(even){
+    background-color: #faf6e2a0;
+}
+
+.taxi-list tr:nth-child(odd){
+    background-color: rgba(255, 255, 255, 0.673);
+}
+
+.taxi-list tr:hover {
+    background-color: rgb(235, 234, 234);
+}
+
+.taxi-list th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #820C0C;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.Title {
+    display: flex;
+    position:relative;
+    border: none;
+    width: 115%;
+    margin-bottom: 2%;
+    margin-top: 3%;
+}
+
+.Title h1{
+    font-size: 35px;
+    letter-spacing: 2px;
+    margin-left: 90px;
+    margin-right: 10px;
+}
+
+.Title>:any-link{
+    font-size: 12px;
+    padding: -10%;
+    margin: 25px 0px 0px 5px;
+}
+
+.Title>:any-link:hover{
+    font-size: 13px;
+    text-decoration: underline;
+}
+
+.Title .active{
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+input[type=text] {
+    padding: 3px 5px;
+    border: 1px solid darkgray;
+    border-radius: 4px;
+    margin: 0px -450px 0px 10px;
+}
+
+button {
+    cursor: pointer;
+    background-color: #820C0C;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 4px;
+    border: none;
+}
+
+button:hover{
+    background-color: #C00D0D;
+}
+
+#search {
+    margin-left: 455px;
+}
+
+#reset {
+    margin-left: 5px;
+}
+
+@media only screen and (max-device-width: 480px) {
+
+    body {
+        transform: translate(0%, 0%);
+        min-height: 100vh;
+        position:relative;
+        padding-bottom: 15%;
+        mix-blend-mode: normal;
+        background-image: linear-gradient(90deg, rgb(255, 255, 255) 4.41%, #faf6e2 35.33%, rgba(232, 251, 249, 0.97) 76.09%);
+    }
+    
+    .Header {
+        display: block;
+        position:relative;
+        padding-left: 2%;
+        padding-right: 2%;
+        border: none;
+        justify-content: center;
+    }
+
+    .logo{
+        margin-top: 10%;
+        margin-bottom: 10%;
+        margin-left: 18%;
+    }
+    
+    .Route {
+        /* margin-left: 15%;
+        margin-top: 2%; */
+        font-size: 22px;
+    }
+    
+    .Divider{
+        border-top: 2px solid #C00D0D;
+        box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.15);
+        border-radius: 30px;
+        width: 95%;
+        margin-top: 8%;
+        margin-bottom: 2%;
+        margin-left: -6%;
+    }
+    
+    .tab-selection{
+        cursor: pointer;
+        display:flex;
+        border:none;
+        width:90%;
+        height: 40px;
+        justify-content:space-evenly;
+        margin-top: 5%;
+        margin-left: -2%;
+    }
+    
+    .tab-selection > div:hover{
+        font-size: 20px;
+        color: #C00D0D;
+    }
+    
+    .tab-selection>div .active{
+        font-size: 24px;
+        color: #C00D0D;
+        font-weight: bold;
+        text-shadow: 2px 2px lightgray;
+    }
+    
+    .Footer {
+        position: absolute;
+        display:block;
+        padding-left: 5%;
+        padding-right: 5%;
+        margin-top: 10%;
+        width: 100%;
+        height: 270px;
+        left: 0;
+        bottom:0;
+        right: 0;
+        background: linear-gradient(90.7deg, #910A0A -3.04%, #820C0C 90.66%);
+    }
+    
+    .Intro1 {
+        width: 98%;
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 18px;
+        text-align: center;
+        color: rgba(238, 238, 238, 0.7);
+        margin-left: 1%;
+    }
+    
+    .Intro2 {
+        width: 97%;
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 18px;
+        text-align: center;    
+        color: rgba(238, 238, 238, 0.7);
+    }
+    
+    .logoBW {
+        padding-left: 31%;
+        padding-right: 5%;
+    }
+    
+    .leaflet-container {
+        width: 100%;
+        height: 200px;
+        background: none;
+        margin-bottom: 15%;
+        margin-left: -5%;
+      }
+    
+    .taxi-list {
+        text-align: left;
+        width: 95%;
+        margin-top: 2%;
+        margin-left: -4%;
+        margin-bottom: 70%;
+        font-size: 12px;
+        border-collapse: collapse;
+    }
+    
+    .taxi-list td, .taxi-list th {
+        border: 1px solid #ddd;
+        padding: 12px;
+    }
+    
+    .taxi-list tr:nth-child(even){
+        background-color: #faf6e2a0;
+    }
+    
+    .taxi-list tr:nth-child(odd){
+        background-color: rgba(255, 255, 255, 0.673);
+    }
+    
+    .taxi-list tr:hover {
+        background-color: rgb(235, 234, 234);
+    }
+    
+    .taxi-list th {
+        text-align: left;
+        background-color: #820C0C;
+        color: white;
+        font-size: 13px;
+        letter-spacing: 2px;
+    }
+    
+    .Title {
+        display: block;
+        position:relative;
+        border: none;
+        width: 100%;
+        margin-bottom: 2%;
+        margin-top: 3%;
+        margin-left: -4%;
+    }
+    
+    .Title h1{
+        text-align: center;
+        font-size: 35px;
+        letter-spacing: 2px;
+        margin-right: 50%;
+    }
+    
+    .Title>:any-link{
+        font-size: 12px;
+        padding: -10%;
+        margin: 0px -65px 0px 75px;
+    }
+    
+    input[type=text] {
+        width: 50%;
+        padding: 3px 5px;
+        border: 1px solid darkgray;
+        border-radius: 4px;
+        margin: 10px -450px 20px 0px;
+    }
+    
+    button {
+        cursor: pointer;
+        background-color: #820C0C;
+        color: white;
+        padding: 3px 10px;
+        border-radius: 4px;
+        border: none;
+    }
+    
+    #search {
+        margin-left: 455px;
+    }
+    
+    #reset {
+        margin-left: 5px;
+    }
+}

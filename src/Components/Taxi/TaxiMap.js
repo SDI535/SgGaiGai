@@ -5,6 +5,7 @@ import "./taxi.css";
 import pin from "./Static/Icons/pin.png";
 import taxiIcon from "./Static/Icons/taxi.png";
 import taxiStop from "./Static/Icons/taxi-stop.png";
+import { nanoid } from "nanoid";
 
 const TaxiMap = ({
   taxiStands,
@@ -82,7 +83,7 @@ const TaxiMap = ({
   const availableNearbyTaxisElements = availableTaxisCount.map((taxi) => {
     return (
       <Marker
-        key={taxi.Latitude}
+        key={nanoid()}
         position={[taxi.Latitude, taxi.Longitude]}
         icon={GetIcon(taxiIcon, [32, 32])}
       ></Marker>

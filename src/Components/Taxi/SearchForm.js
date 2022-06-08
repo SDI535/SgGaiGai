@@ -44,8 +44,8 @@ const SearchForm = ({
         placeholder="Search TaxiStands.."
         onChange={handleChange}
       />
-      <button onClick={handleClick}>Search</button>
-      <button onClick={handleReset}>Reset</button>
+      <button id="search" onClick={handleClick}>Search</button>
+      <button id="reset" onClick={handleReset}>Reset</button>
     </div>
   );
 };
