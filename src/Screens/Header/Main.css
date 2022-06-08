@@ -15,19 +15,20 @@ a:-webkit-any-link {
 }
 
 body {
-    min-height: 100vh;
+    min-height: 70%;
     position: static;
-    /* padding-bottom: 15%; */
     mix-blend-mode: normal;
     background-image: linear-gradient(90deg, rgb(255, 255, 255) 4.41%, #faf6e2 35.33%, rgba(232, 251, 249, 0.97) 76.09%);
 }
 
 .Header {
+    width: 100%;
+    min-height: 73vh;
     display: flex;
     position: static;
     padding-left: 2%;
     padding-right: 2%;
-    border: none;
+    margin-top: 2%;
 }
 
 .logo{
@@ -35,8 +36,7 @@ body {
 }
 
 .Route {
-    margin-left: 15%;
-    margin-top: 2%;
+    margin: 0 auto;
     font-size: 22px;
 }
 
@@ -72,6 +72,23 @@ body {
     text-shadow: 2px 2px lightgray;
 }
 
+.tab-container {
+    display:block;
+    margin-top: -33%;
+    padding: 0 10%;
+    min-height: 59vh;
+}
+
+.Display {
+    padding: 0 10%;
+}
+
+.leaflet-container {
+    width: 100%;
+    height: 500px;
+    background: none;
+}
+
 .Footer {
     position:static;
     justify-content: center;
@@ -79,9 +96,7 @@ body {
     padding: 1.5%;
     width: 100%;
     height: 120px;
-    left: 0;
     bottom:0;
-    right: 0;
     background: linear-gradient(90.7deg, #910A0A -3.04%, #820C0C 90.66%);
     margin-top: 5%;
 }
@@ -115,57 +130,19 @@ body {
     padding-right: 2%;
 }
 
-.leaflet-container {
-    width: 92%;
-    height: 500px;
-    background: none;
-  }
-
-.taxi-list {
-    text-align: left;
-    margin-top: 2%;
-    font-size: 15px;
-    border-collapse: collapse;
-}
-
-.taxi-list td, .taxi-list th {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
-.taxi-list tr:nth-child(even){
-    background-color: #faf6e2a0;
-}
-
-.taxi-list tr:nth-child(odd){
-    background-color: rgba(255, 255, 255, 0.673);
-}
-
-.taxi-list tr:hover {
-    background-color: rgb(235, 234, 234);
-}
-
-.taxi-list th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #820C0C;
-    color: white;
-    font-size: 18px;
-    letter-spacing: 2px;
-}
-
 .Title {
     display: flex;
     position:relative;
+    justify-content: left;
     border: none;
-    width: 115%;
+    width: 100%;
     margin-bottom: 2%;
     margin-top: 3%;
+    margin-left: 2%;
 }
 
 .Title h1{
-    font-size: 35px;
+    font-size: 40px;
     letter-spacing: 2px;
     margin-left: 90px;
     margin-right: 10px;
@@ -174,7 +151,7 @@ body {
 .Title>:any-link{
     font-size: 12px;
     padding: -10%;
-    margin: 25px 0px 0px 5px;
+    margin: 30px 0px 0px 5px;
 }
 
 .Title>:any-link:hover{
@@ -189,10 +166,11 @@ body {
 }
 
 input[type=text] {
+    width: 30%;
     padding: 3px 5px;
     border: 1px solid darkgray;
     border-radius: 4px;
-    margin: 0px -450px 0px 10px;
+    margin: 0px -450px 15px 0px;
 }
 
 button {
@@ -216,57 +194,108 @@ button:hover{
     margin-left: 5px;
 }
 
+#selector {
+    display: block;
+    width: 30%;
+    padding: 3px 5px;
+    border: 1px solid darkgray;
+    border-radius: 4px;
+    margin-bottom: 2%;
+    margin-top: 5px;
+}
+
+#selectTitle {
+    margin-left: 0;
+    font-size: 13px;
+}
+
+.taxi-list {
+    width:100%;
+    text-align: left;
+    margin-top: 2%;
+    font-size: 16px;
+    border-collapse: collapse;
+}
+
+.taxi-list h3{
+    margin-bottom: 1%;
+    margin-left: 10%;
+    letter-spacing: 1px;
+}
+
+.taxi-list td, .taxi-list th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.taxi-list tr:nth-child(even){
+    background-color: #faf6e2a0;
+}
+
+.taxi-list tr:nth-child(odd){
+    background-color: rgba(255, 255, 255, 0.673);
+}
+
+.taxi-list tr:hover {
+    background-color: rgb(235, 234, 234);
+}
+
+.taxi-list th {
+    white-space:nowrap;
+    padding: 12px 20px;
+    text-align: left;
+    background-color: #820C0C;
+    color: white;
+    font-size: 15px;
+}
+
+
 @media only screen and (max-device-width: 480px) {
 
     body {
         transform: translate(0%, 0%);
         min-height: 100vh;
         position:relative;
-        padding-bottom: 15%;
         mix-blend-mode: normal;
         background-image: linear-gradient(90deg, rgb(255, 255, 255) 4.41%, #faf6e2 35.33%, rgba(232, 251, 249, 0.97) 76.09%);
     }
     
     .Header {
+        width: 100%;
         display: block;
         position:relative;
-        padding-left: 2%;
-        padding-right: 2%;
+        padding-left: 8%;
+        padding-right: 8%;
         border: none;
         justify-content: center;
     }
 
     .logo{
-        margin-top: 10%;
-        margin-bottom: 10%;
-        margin-left: 18%;
+        margin: 10% 30%;
+        justify-content: center;
     }
     
     .Route {
-        /* margin-left: 15%;
-        margin-top: 2%; */
-        font-size: 22px;
+        margin: 0 auto;
+        font-size: 18px;
     }
     
     .Divider{
         border-top: 2px solid #C00D0D;
         box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.15);
         border-radius: 30px;
-        width: 95%;
-        margin-top: 8%;
-        margin-bottom: 2%;
-        margin-left: -6%;
+        width: 100%;
+        margin-top: 6%;
     }
     
     .tab-selection{
         cursor: pointer;
         display:flex;
         border:none;
-        width:90%;
+        width:100%;
         height: 40px;
         justify-content:space-evenly;
-        margin-top: 5%;
-        margin-left: -2%;
+        margin: 0 auto;
     }
     
     .tab-selection > div:hover{
@@ -275,23 +304,36 @@ button:hover{
     }
     
     .tab-selection>div .active{
-        font-size: 24px;
+        font-size: 18px;
         color: #C00D0D;
         font-weight: bold;
         text-shadow: 2px 2px lightgray;
     }
+
+    .tab-container {
+        display:block;
+        margin-top: -100%;
+        margin-left: 0;
+        padding: 0 10%;
+        min-height: 42vh;
+    }
+
+    .Display {
+        margin-left: -10%;
+        padding-right: 17%;
+    }
+    
     
     .Footer {
-        position: absolute;
+        position: static;
+        justify-content: center;
         display:block;
         padding-left: 5%;
         padding-right: 5%;
-        margin-top: 10%;
+        margin-top: 2%;
         width: 100%;
-        height: 270px;
-        left: 0;
+        height: 100%;
         bottom:0;
-        right: 0;
         background: linear-gradient(90.7deg, #910A0A -3.04%, #820C0C 90.66%);
     }
     
@@ -320,26 +362,28 @@ button:hover{
     }
     
     .leaflet-container {
-        width: 100%;
+        justify-content: center;
+        width: 120%;
         height: 200px;
         background: none;
         margin-bottom: 15%;
-        margin-left: -5%;
       }
     
     .taxi-list {
         text-align: left;
-        width: 95%;
-        margin-top: 2%;
-        margin-left: -4%;
+        width: 100%;
         margin-bottom: 70%;
-        font-size: 12px;
+        font-size: 10px;
         border-collapse: collapse;
     }
     
     .taxi-list td, .taxi-list th {
         border: 1px solid #ddd;
-        padding: 12px;
+        padding: 8px;
+    }
+
+    .taxi-list td {
+        vertical-align: bottom;
     }
     
     .taxi-list tr:nth-child(even){
@@ -358,7 +402,7 @@ button:hover{
         text-align: left;
         background-color: #820C0C;
         color: white;
-        font-size: 13px;
+        font-size: 9.5px;
         letter-spacing: 2px;
     }
     
@@ -367,46 +411,64 @@ button:hover{
         position:relative;
         border: none;
         width: 100%;
-        margin-bottom: 2%;
-        margin-top: 3%;
-        margin-left: -4%;
+        margin: 0 auto;
+        margin-bottom: 5%;
     }
     
     .Title h1{
         text-align: center;
         font-size: 35px;
         letter-spacing: 2px;
-        margin-right: 50%;
+        margin-right: 30%;
     }
     
     .Title>:any-link{
         font-size: 12px;
         padding: -10%;
-        margin: 0px -65px 0px 75px;
+        margin: 0px -75px 0px 85px;
     }
     
     input[type=text] {
-        width: 50%;
-        padding: 3px 5px;
+        width: 52%;
+        font-size: 10px;
+        padding: 5px 5px;
         border: 1px solid darkgray;
         border-radius: 4px;
-        margin: 10px -450px 20px 0px;
+        margin: 25px -450px 20px 0px;
     }
     
     button {
-        cursor: pointer;
         background-color: #820C0C;
         color: white;
-        padding: 3px 10px;
+        padding: 5px 5px;
         border-radius: 4px;
         border: none;
+        font-size: 10px;
     }
-    
+
     #search {
         margin-left: 455px;
     }
     
     #reset {
-        margin-left: 5px;
+        margin-left: 4px;
     }
+
+    #selector {
+        display: block;
+        width: 120%;
+        padding: 3px 5px;
+        border: 1px solid darkgray;
+        border-radius: 4px;
+        margin-bottom: 7%;
+        margin-top: 5px;
+    }
+    
+    #selectTitle {
+        margin-left: 0;
+        margin-top: 5%;
+        text-align: center;
+        font-size: 12px;
+    }
+    
 }
