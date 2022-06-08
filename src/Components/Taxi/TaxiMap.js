@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import L from "leaflet";
 import { MapContainer, TileLayer, useMap, Marker, Popup } from "react-leaflet";
-import "./taxi.css";
 import pin from "./Static/Icons/pin.png";
 import taxiIcon from "./Static/Icons/taxi.png";
 import taxiStop from "./Static/Icons/taxi-stop.png";
