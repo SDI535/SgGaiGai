@@ -117,7 +117,7 @@ const Taxi = () => {
 
   return (
     <div>
-      <div>
+      <div className="Title">
         <h1>Taxis</h1>
         <NavLink to="/taxi/mapview" activeClassName="active">
           Map View
