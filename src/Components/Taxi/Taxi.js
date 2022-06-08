@@ -37,9 +37,6 @@ const Taxi = () => {
       }
     };
     fetchAvailableTaxis();
-    setInterval(() => {
-      fetchAvailableTaxis();
-    }, 60000); // update every 60 seconds
   }, []);
 
   // set search param from search form
@@ -98,32 +95,35 @@ const Taxi = () => {
   //count available taxis, nearest 2km to search Location using haversine formula
   useEffect(() => {
     if (coordinates) {
-      let matches = [];
-      availableTaxis.forEach((taxi) => {
-        const { Latitude, Longitude } = taxi;
-        const distance = haversine(
-          coordinates[0],
-          coordinates[1],
-          Latitude,
-          Longitude
-        );
-        if (distance <= 2) {
-          matches.push(taxi);
-        }
-      });
-      setAvailableTaxisCount(matches);
+      const setNearbyTaxis = () => {
+        let matches = [];
+        availableTaxis.forEach((taxi) => {
+          const { Latitude, Longitude } = taxi;
+          const distance = haversine(
+            coordinates[0],
+            coordinates[1],
+            Latitude,
+            Longitude
+          );
+          if (distance <= 2) {
+            matches.push(taxi);
+          }
+        });
+        setAvailableTaxisCount(matches);
+      };
+      setNearbyTaxis();
     }
   }, [coordinates]);
 
   return (
     <div>
-      <div>
+      <div className="Title">
         <h1>Taxis</h1>
-        <NavLink to="/taxi/mapview">
-          <button>Map View</button>
+        <NavLink to="/taxi/mapview" activeClassName="active">
+          Map View
         </NavLink>
-        <NavLink to="/taxi/listview">
-          <button>List View</button>
+        <NavLink to="/taxi/listview" activeClassName="active">
+          List View
         </NavLink>
         <SearchForm
           setSearchParam={setSearchParam}

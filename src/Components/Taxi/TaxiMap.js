@@ -5,6 +5,7 @@ import "./taxi.css";
 import pin from "./Static/Icons/pin.png";
 import taxiIcon from "./Static/Icons/taxi.png";
 import taxiStop from "./Static/Icons/taxi-stop.png";
+import { nanoid } from "nanoid";
 
 const TaxiMap = ({
   taxiStands,
@@ -14,7 +15,25 @@ const TaxiMap = ({
 }) => {
   const [mapCenter, setMapCenter] = useState([1.3521, 103.8198]);
   const [defaultZoom, setDefaultZoom] = useState(12);
-  const mapRef = useRef();
+
+  // set newmapCenter and defaultZoom
+  useEffect(() => {
+    if (coordinates === null) {
+      setMapCenter([1.3521, 103.8198]);
+      setDefaultZoom(12);
+    } else {
+      setMapCenter(coordinates);
+      setDefaultZoom(14);
+    }
+  }, [coordinates]);
+
+  //React Leaflet hook
+  function SetMap({ mapCenter, defaultZoom }) {
+    const map = useMap();
+    if (mapCenter) {
+      map.setView(mapCenter, defaultZoom, { animate: true });
+    }
+  }
 
   //custom marker
   const GetIcon = (_iconUrl, _iconSize) => {
@@ -64,14 +83,12 @@ const TaxiMap = ({
   const availableNearbyTaxisElements = availableTaxisCount.map((taxi) => {
     return (
       <Marker
-        key={taxi.Latitude}
+        key={nanoid()}
         position={[taxi.Latitude, taxi.Longitude]}
         icon={GetIcon(taxiIcon, [32, 32])}
       ></Marker>
     );
   });
-
-  // set map center to coordinates if available
 
   return (
     <div className="leaflet-container">
@@ -80,6 +97,7 @@ const TaxiMap = ({
         zoom={defaultZoom}
         scrollWheelZoom={true}
       >
+        <SetMap mapCenter={mapCenter} defaultZoom={defaultZoom} />
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
