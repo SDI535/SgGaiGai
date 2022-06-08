@@ -3,6 +3,7 @@ import './Main.css';
 import ColorLogo from './Logo/LogoC.svg';
 import Footer from '../Footer/Footer';
 import Taxi from '../../Components/Taxi/Taxi';
+import Bus from '../../Components/Bus/Bus';
 import {
     BrowserRouter as Router,
     Switch,
@@ -51,7 +52,7 @@ function Header() {
                             <Redirect exact from="/" to="bus" />
 
                             <Route path="/bus">
-                                <div>Bus Content</div>
+                                <Bus />
                             </Route>
 
                             <Route path="/car">
