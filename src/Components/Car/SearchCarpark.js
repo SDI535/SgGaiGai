@@ -7,13 +7,6 @@ const SearchCarpark = () => {
         SearchCarpark(e.target.value);
     };
 
-    // const handleClick = (e) => {
-    //     e.preventDefault();
-    //     const fetchData = async () => {
-
-    //     }
-    // }
-
     return (
         <div>
         <form>
