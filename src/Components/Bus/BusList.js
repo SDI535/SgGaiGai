@@ -16,7 +16,7 @@ const BusList = (props) => {
   }, [busStops]);
 
   return (
-    <div>
+    <div className="taxi-list">
       <table>
         <tbody>
           <tr>
