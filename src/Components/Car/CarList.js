@@ -12,15 +12,17 @@ const CarList = ({ carparkList, filteredCarparkList }) => {
 
   return (
     <>
-      <table>
-        <tbody>
-          <tr>
-            <th>Location</th>
-            <th>Available Lots</th>
-          </tr>
-          {fullCarparkList}
-        </tbody>
-      </table>
+      <div className="taxi-list">
+        <table>
+          <tbody>
+            <tr>
+              <th>Location</th>
+              <th>Available Lots</th>
+            </tr>
+            {fullCarparkList}
+          </tbody>
+        </table>
+      </div>
     </>
   );
 };
