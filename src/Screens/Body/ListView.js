@@ -11,7 +11,7 @@ const ListView = (props) => {
       return <Taxi isListView={isListView} />;
       break;
     case "Car":
-      return <div>Car List</div>;
+      return <Car isListView={isListView} />;
       break;
     case "Train":
       return <div>Train List</div>;
