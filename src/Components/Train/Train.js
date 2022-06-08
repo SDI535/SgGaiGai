@@ -19,6 +19,7 @@ function Train({ isListView }) {
       <div>
         <label> Select your area:</label>
         <select value={selectedValue} onChange={handleChange}>
+          {isListView ? null : <option value="ALL">All Stations</option>}
           <option value="CCL">CCL (for Circle Line)</option>
           <option value="DTL">DTL (for Downtown Line)</option>
           <option value="EWL">EWL (for East West Line)</option>

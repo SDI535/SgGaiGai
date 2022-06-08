@@ -221,6 +221,7 @@ function TrainMap({ selectedValue }) {
       </Marker>
     );
   });
+
   //NEL markers
   const nelMarkers = filteredNEL.map((station) => {
     const stationName = station.properties.STN_NAME;
@@ -378,6 +379,24 @@ function TrainMap({ selectedValue }) {
       </Marker>
     );
   });
+  const cclCelMarkers = [cclMarkers, celMarkers];
+
+  const ewlCglMarkers = [ewlMarkers, cglMarkers];
+
+  const plrtMarkers = [plrt1Markers, plrt2Markers, plrt3Markers];
+
+  const slrtMarkers = [slrt1Markers, slrt2Markers, slrt3Markers];
+
+  const allMarkers = [
+    bplMarkers,
+    cclCelMarkers,
+    dtlMarkers,
+    ewlCglMarkers,
+    nelMarkers,
+    nslMarkers,
+    plrtMarkers,
+    slrtMarkers,
+  ];
 
   //switch case for the selected value
   // const switchCase = (selectedValue) => {
@@ -533,14 +552,15 @@ function TrainMap({ selectedValue }) {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      {selectedValue === "CCL" && cclMarkers}
+      {selectedValue === "ALL" && allMarkers}
+      {selectedValue === "CCL" && cclCelMarkers}
       {selectedValue === "DTL" && dtlMarkers}
-      {selectedValue === "EWL" && ewlMarkers}
+      {selectedValue === "EWL" && ewlCglMarkers}
       {selectedValue === "NEL" && nelMarkers}
       {selectedValue === "NSL" && nslMarkers}
       {selectedValue === "BPL" && bplMarkers}
-      {selectedValue === "SLRT" && (slrt1Markers, slrt2Markers, slrt3Markers)}
-      {selectedValue === "PLRT" && (plrt1Markers, plrt2Markers, plrt3Markers)}
+      {selectedValue === "SLRT" && slrtMarkers}
+      {selectedValue === "PLRT" && plrtMarkers}
     </MapContainer>
   );
 }
