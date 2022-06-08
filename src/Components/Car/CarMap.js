@@ -12,16 +12,16 @@ const CarMap = (props) => {
 
         return(
             <Marker
-            key={x.CarParkID}
-            position={[latitude, longitude]}
+              key={x.CarParkID}
+              position={[latitude, longitude]}
             >
-        <Popup>
-          <div>
-            <h3>{x.Development}</h3>
-            <p>Available Lots: {x.AvailableLots}</p>
-          </div>
-        </Popup>
-      </Marker>
+                <Popup>
+                 <div>
+                    <h3>{x.Development}</h3>
+                    <p>Available Lots: {x.AvailableLots}</p>
+                </div>
+                </Popup>
+            </Marker>
         )
     })
 
