@@ -24,6 +24,8 @@ const Body = () => {
         <NavLink to={`${url}/listview`} activeClassName="active">
           List View
         </NavLink>
+      </div>
+      <div className="Display">
         <Switch>
           <Route path={`${path}/mapview`}>
             <MapView tabId={tabId} />
@@ -32,7 +34,7 @@ const Body = () => {
             <ListView tabId={tabId} />
           </Route>
         </Switch>
-      </div>
+        </div>
     </div>
   );
 };

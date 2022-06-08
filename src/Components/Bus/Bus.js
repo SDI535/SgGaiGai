@@ -57,8 +57,8 @@ const Bus = ({ isListView }) => {
   return (
     <>
       <div>
-        <label> Select your area:</label>
-        <select value={selectedValue} onChange={handleChange}>
+        <label id="selectTitle"> Select your area:</label>
+        <select id="selector" value={selectedValue} onChange={handleChange}>
           <option value="0">
             Central District, Downtown Core, Bukit Merah, Queenstown
           </option>
