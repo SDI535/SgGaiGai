@@ -1,17 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
 // import App from './App';
-import reportWebVitals from './reportWebVitals';
-import Header from './Screens/Header/Header';
+import reportWebVitals from "./reportWebVitals";
+import Body from "./Screens/Body/Body";
+import Header from "./Screens/Header/Header";
+import Footer from "./Screens/Footer/Footer";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  NavLink,
+} from "react-router-dom";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // <React.StrictMode>
   //   <App />
   // </React.StrictMode>
   <>
-    <Header />
+    <Router>
+      <Header />
+      <Route path="/:tabId">
+        <Body />
+      </Route>
+      <Footer></Footer>
+    </Router>
   </>
 );
 
