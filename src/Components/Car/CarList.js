@@ -19,6 +19,7 @@ const CarList = ({
             <tr key={key}>
                 <td>{carparkList.development}</td>
                 <td>{carparkList.availableLots}</td>
+
             </tr>
         )
     })

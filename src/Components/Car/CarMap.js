@@ -7,6 +7,13 @@ const CarMap = ({
     filteredCarparkList,
 }) => {
     
+    return (
+        <Marker
+            key={key}
+            position={[carparkList.]}>
+
+        </Marker>
+    )
 }
 
 export default CarMap;
