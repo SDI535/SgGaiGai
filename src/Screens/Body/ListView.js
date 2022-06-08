@@ -2,6 +2,7 @@ import React from "react";
 import Taxi from "../../Components/Taxi/Taxi";
 import Bus from "../../Components/Bus/Bus";
 import Car from "../../Components/Car/Car";
+import Train from "../../Components/Train/Train";
 
 const ListView = (props) => {
   const { tabId } = props;
@@ -14,10 +15,11 @@ const ListView = (props) => {
       return <Car isListView={isListView} />;
       break;
     case "Train":
-      return <div>Train List</div>;
+      return <Train isListView={isListView} />;
       break;
     case "Bus":
       return <Bus isListView={isListView} />;
+      break;
   }
 };
 

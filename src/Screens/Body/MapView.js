@@ -2,7 +2,7 @@ import React from "react";
 import Taxi from "../../Components/Taxi/Taxi";
 import Bus from "../../Components/Bus/Bus";
 import Car from "../../Components/Car/Car";
-
+import Train from "../../Components/Train/Train";
 const MapView = (props) => {
   const { tabId } = props;
   const [isListView] = React.useState(false);
@@ -14,10 +14,11 @@ const MapView = (props) => {
       return <Car isListView={isListView} />;
       break;
     case "Train":
-      return <div>Train Map</div>;
+      return <Train isListView={isListView} />;
       break;
     case "Bus":
       return <Bus isListView={isListView} />;
+      break;
   }
 };
 
