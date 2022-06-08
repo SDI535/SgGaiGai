@@ -1,0 +1,9 @@
+* {
+    box-sizing: border-box;
+    margin: auto;
+  }
+  .leaflet-container {
+    width: 90%;
+    height: 1000px;
+    background: none;
+  }
