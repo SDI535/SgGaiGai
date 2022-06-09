@@ -13,13 +13,13 @@ const TaxiMap = ({
   availableTaxisCount,
 }) => {
   const [mapCenter, setMapCenter] = useState([1.3521, 103.8198]);
-  const [defaultZoom, setDefaultZoom] = useState(12);
+  const [defaultZoom, setDefaultZoom] = useState(11);
 
   // set newmapCenter and defaultZoom
   useEffect(() => {
     if (coordinates === null) {
       setMapCenter([1.3521, 103.8198]);
-      setDefaultZoom(12);
+      setDefaultZoom(11);
     } else {
       setMapCenter(coordinates);
       setDefaultZoom(14);
