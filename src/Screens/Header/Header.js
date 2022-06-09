@@ -1,8 +1,10 @@
 import React from "react";
+
 import "./Main.css";
 import ColorLogo from "./Logo/LogoC.svg";
 import Footer from "../Footer/Footer";
 import Taxi from "../../Components/Taxi/Taxi";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -27,6 +29,7 @@ function Header() {
                 Bus
               </NavLink>
             </div>
+
 
             <div>
               <NavLink activeClassName="active" to="/Car">
