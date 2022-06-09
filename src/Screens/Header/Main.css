@@ -23,7 +23,6 @@ body {
 
 .Header {
     width: 100%;
-    min-height: 73vh;
     display: flex;
     position: static;
     padding-left: 2%;
@@ -73,9 +72,10 @@ body {
 }
 
 .tab-container {
+    border: 2px solid black;
     display:block;
-    margin-top: -33%;
     padding: 0 10%;
+    margin: 0 auto;
     min-height: 59vh;
 }
 
@@ -133,18 +133,16 @@ body {
 .Title {
     display: flex;
     position:relative;
-    justify-content: left;
     border: none;
     width: 100%;
     margin-bottom: 2%;
     margin-top: 3%;
-    margin-left: 2%;
+    padding: 0 10%;
 }
 
 .Title h1{
     font-size: 40px;
     letter-spacing: 2px;
-    margin-left: 90px;
     margin-right: 10px;
 }
 
