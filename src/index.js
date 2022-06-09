@@ -11,6 +11,7 @@ import {
   Switch,
   Route,
   NavLink,
+  Redirect,
 } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -21,9 +22,13 @@ root.render(
   <>
     <Router>
       <Header />
-      <Route path="/:tabId">
-        <Body />
-      </Route>
+      <Switch>
+        <Redirect exact from="/sg-gai-gai" to="/Bus/mapview" />
+        <Route path="/:tabId">
+          <Body />
+        </Route>
+      </Switch>
+
       <Footer></Footer>
     </Router>
   </>
