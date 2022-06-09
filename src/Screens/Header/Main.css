@@ -1,0 +1,468 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+a:-webkit-any-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    min-height: 70%;
+    position: static;
+    mix-blend-mode: normal;
+    background-image: linear-gradient(90deg, rgb(255, 255, 255) 4.41%, #faf6e2 35.33%, rgba(232, 251, 249, 0.97) 76.09%);
+}
+
+.Header {
+    width: 100%;
+    display: flex;
+    position: static;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+.logo{
+    margin-top: 1%;
+}
+
+.Route {
+    margin: 0 auto;
+    font-size: 22px;
+    width: 80%;
+}
+
+.Divider{
+    border-top: 2px solid #C00D0D;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 30px;
+    width: 100%;
+    margin-top: 3%;
+    margin-bottom: 2%;
+}
+
+.tab-selection{
+    cursor: pointer;
+    justify-content: center;
+    margin: -50px auto 0;
+    display:flex;
+    border:none;
+    width:45rem;
+    justify-content:space-evenly;
+}
+
+.tab-selection > div:hover{
+    font-size: 24px;
+    color: #C00D0D;
+}
+
+.tab-selection>div .active{
+    font-size: 24px;
+    color: #C00D0D;
+    font-weight: bold;
+    text-shadow: 2px 2px lightgray;
+}
+
+.tab-container {
+    display:block;
+    padding: 0 10%;
+    margin: 0 auto;
+    min-height: 59vh;
+}
+
+.Display {
+    padding: 0 10%;
+}
+
+.leaflet-container {
+    width: 100%;
+    height: 500px;
+    background: none;
+}
+
+.Footer {
+    position:static;
+    justify-content: center;
+    display: flex;
+    padding: 1.5%;
+    width: 100%;
+    height: 100%;
+    bottom:0;
+    background: linear-gradient(90.7deg, #910A0A -3.04%, #820C0C 90.66%);
+    margin-top: 3%;
+}
+
+.Intro1 {
+    width: 430px;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 18px;
+    text-align: center;
+    padding: 15px;
+    margin-left: 15%;
+
+    color: rgba(238, 238, 238, 0.7);
+}
+
+.Intro2 {
+    width: 450px;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 18px;
+    text-align: center;
+    padding: 15px;
+    margin-right: 15%;
+
+    color: rgba(238, 238, 238, 0.7);
+}
+
+.logoBW {
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.Title {
+    display: flex;
+    position:relative;
+    border: none;
+    width: 100%;
+    margin-bottom: 2%;
+    padding: 0 10%;
+}
+
+.Title h1{
+    font-size: 40px;
+    letter-spacing: 2px;
+    margin-right: 10px;
+}
+
+.Title>:any-link{
+    font-size: 12px;
+    padding: -10%;
+    margin: 30px 0px 0px 5px;
+}
+
+.Title>:any-link:hover{
+    font-size: 13px;
+    text-decoration: underline;
+}
+
+.Title .active{
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+input[type=text] {
+    width: 30%;
+    padding: 3px 5px;
+    border: 1px solid darkgray;
+    border-radius: 4px;
+    margin: 0px -450px 15px 0px;
+}
+
+button {
+    cursor: pointer;
+    background-color: #820C0C;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 4px;
+    border: none;
+}
+
+button:hover{
+    background-color: #C00D0D;
+}
+
+#search {
+    margin-left: 455px;
+}
+
+#reset {
+    margin-left: 5px;
+}
+
+#selector {
+    display: block;
+    width: 30%;
+    padding: 3px 5px;
+    border: 1px solid darkgray;
+    border-radius: 4px;
+    margin-bottom: 2%;
+    margin-top: 5px;
+}
+
+#selectTitle {
+    margin-left: 0;
+    font-size: 13px;
+}
+
+.taxi-list {
+    width:100%;
+    text-align: left;
+    margin-top: 2%;
+    font-size: 16px;
+    border-collapse: collapse;
+}
+
+.taxi-list h3{
+    margin-bottom: 1%;
+    letter-spacing: 1px;
+}
+
+.taxi-list td, .taxi-list th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.taxi-list tr:nth-child(even){
+    background-color: #f7eaea;
+}
+
+.taxi-list tr:nth-child(odd){
+    background-color: rgba(255, 255, 255, 0.673);
+}
+
+.taxi-list tr:hover {
+    color: white;
+    background-color: #820C0C;
+}
+
+.taxi-list th {
+    white-space:nowrap;
+    padding: 12px 20px;
+    text-align: left;
+    background-color: #820C0C;
+    color: white;
+    font-size: 15px;
+}
+
+
+@media only screen and (max-device-width: 480px) {
+
+    body {
+        transform: translate(0%, 0%);
+        min-height: 100vh;
+        position:relative;
+        mix-blend-mode: normal;
+        background-image: linear-gradient(90deg, rgb(255, 255, 255) 4.41%, #faf6e2 35.33%, rgba(232, 251, 249, 0.97) 76.09%);
+    }
+    
+    .Header {
+        width: 100%;
+        display: block;
+        position:relative;
+        justify-content: center;
+    }
+
+    .logo{
+        width: auto;
+        height: auto;
+        text-align: center;
+        margin: auto;
+    }
+
+    .Route {
+        margin: 0 auto;
+        font-size: 18px;
+        width: 90%;
+    }
+    
+    .Divider{
+        border-top: 2px solid #C00D0D;
+        box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.15);
+        border-radius: 30px;
+        width: 100%;
+        margin-top: 6%;
+    }
+    
+    .tab-selection{
+        cursor: pointer;
+        display:flex;
+        width:100%;
+        justify-content:space-evenly;
+        margin: 0 auto;
+    }
+    
+    .tab-selection > div:hover{
+        font-size: 20px;
+        color: #C00D0D;
+    }
+    
+    .tab-selection>div .active{
+        font-size: 18px;
+        color: #C00D0D;
+        font-weight: bold;
+        text-shadow: 2px 2px lightgray;
+    }
+
+    .tab-container {
+        display:block;
+        margin: 0 auto;
+        padding: 0 10%;
+        min-height: 48vh;
+        justify-content: center;
+    }
+
+    .Display {
+        margin-left: -10%;
+        padding-right: 17%;
+    }
+    
+    .Footer {
+        position: static;
+        justify-content: center;
+        display:block;
+        padding-left: 5%;
+        padding-right: 5%;
+        margin-top: 8%;
+        width: 100%;
+        height: 100%;
+        bottom:0;
+        background: linear-gradient(90.7deg, #910A0A -3.04%, #820C0C 90.66%);
+    }
+    
+    .Intro1 {
+        width: 98%;
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 18px;
+        text-align: center;
+        color: rgba(238, 238, 238, 0.7);
+        margin-left: 1%;
+    }
+    
+    .Intro2 {
+        width: 97%;
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 18px;
+        text-align: center;    
+        color: rgba(238, 238, 238, 0.7);
+    }
+    
+    .logoBW {
+        padding-left: 31%;
+        padding-right: 5%;
+    }
+    
+    .leaflet-container {
+        justify-content: center;
+        width: 120%;
+        height: 200px;
+        background: none;
+        margin-bottom: 15%;
+      }
+    
+    .taxi-list {
+        width: 100%;
+        justify-content: center;
+        margin: 0 auto;
+        font-size: 10px;
+        border-collapse: collapse;
+    }
+    
+    .taxi-list td, .taxi-list th {
+        text-align: left;
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    .taxi-list td {
+        vertical-align: bottom;
+    }
+    
+    .taxi-list tr:nth-child(even){
+        background-color: #f7eaea;
+    }
+    
+    .taxi-list tr:nth-child(odd){
+        background-color: rgba(255, 255, 255, 0.673);
+    }
+    
+    .taxi-list th {
+        text-align: left;
+        background-color: #820C0C;
+        color: white;
+        font-size: 9.5px;
+        letter-spacing: 2px;
+    }
+
+    .taxi-list tr:hover {
+        color: white;
+        background-color: #820C0C;
+    }
+    
+    .Title {
+        display: block;
+        position:relative;
+        border: none;
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 5%;
+    }
+    
+    .Title h1{
+        text-align: center;
+        font-size: 35px;
+        letter-spacing: 2px;
+        margin: 0 auto;
+    }
+    
+    .Title>:any-link{
+        font-size: 12px;
+        padding: -10%;
+        margin: 0px -50px 0px 60px;
+    }
+    
+    input[type=text] {
+        width: 52%;
+        font-size: 10px;
+        padding: 5px 5px;
+        border: 1px solid darkgray;
+        border-radius: 4px;
+        margin: 25px -450px 20px 0px;
+    }
+    
+    button {
+        background-color: #820C0C;
+        color: white;
+        padding: 5px 5px;
+        border-radius: 4px;
+        border: none;
+        font-size: 10px;
+    }
+
+    #search {
+        margin-left: 455px;
+    }
+    
+    #reset {
+        margin-left: 4px;
+    }
+
+    #selector {
+        display: block;
+        width: 120%;
+        padding: 3px 5px;
+        border: 1px solid darkgray;
+        border-radius: 4px;
+        margin-bottom: 7%;
+        margin-top: 5px;
+    }
+    
+    #selectTitle {
+        margin-left: 0;
+        margin-top: 5%;
+        text-align: center;
+        font-size: 12px;
+    }
+    
+}
