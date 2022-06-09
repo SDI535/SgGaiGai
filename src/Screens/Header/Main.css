@@ -15,7 +15,7 @@ a:-webkit-any-link {
 }
 
 body {
-    min-height: 85%;
+    min-height: 70%;
     position: static;
     mix-blend-mode: normal;
     background-image: linear-gradient(90deg, rgb(255, 255, 255) 4.41%, #faf6e2 35.33%, rgba(232, 251, 249, 0.97) 76.09%);
@@ -23,11 +23,12 @@ body {
 
 .Header {
     width: 100%;
-    min-height: 85vh;
     display: flex;
     position: static;
     padding-left: 2%;
     padding-right: 2%;
+    margin-top: 2%;
+
 }
 
 .logo{
@@ -71,6 +72,24 @@ body {
     text-shadow: 2px 2px lightgray;
 }
 
+.tab-container {
+    border: 2px solid black;
+    display:block;
+    padding: 0 10%;
+    margin: 0 auto;
+    min-height: 59vh;
+}
+
+.Display {
+    padding: 0 10%;
+}
+
+.leaflet-container {
+    width: 100%;
+    height: 500px;
+    background: none;
+}
+
 .Footer {
     position:static;
     justify-content: center;
@@ -112,73 +131,28 @@ body {
     padding-right: 2%;
 }
 
-.leaflet-container {
-    width: 92%;
-    height: 500px;
-    background: none;
-}
 
-.All-list {
-    width: 100%;
-    text-align: left;
-    margin-top: 2%;
-    font-size: 16px;
-    border-collapse: collapse;
-}
-
-.All-list h3{
-    margin-bottom: 1%;
-    margin-left: 10%;
-    letter-spacing: 1px;
-}
-
-.All-list td, .taxi-list th {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
-.All-list tr:nth-child(even){
-    background-color: #faf6e2a0;
-}
-
-.All-list tr:nth-child(odd){
-    background-color: rgba(255, 255, 255, 0.673);
-}
-
-.All-list tr:hover {
-    background-color: rgb(235, 234, 234);
-}
-
-.All-list th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-left: 2%;
-    text-align: left;
-    background-color: #820C0C;
-    color: white;
-    font-size: 18px;
-}
-
-.TaxiTitle {
+.Title {
     display: flex;
     position:relative;
     border: none;
-    width: 115%;
+    width: 100%;
     margin-bottom: 2%;
     margin-top: 3%;
+    padding: 0 10%;
 }
 
-.TaxiTitle h1{
-    font-size: 35px;
+.Title h1{
+    font-size: 40px;
+
     letter-spacing: 2px;
-    margin-left: 90px;
     margin-right: 10px;
 }
 
 .TaxiTitle>:any-link{
     font-size: 12px;
     padding: -10%;
-    margin: 25px 0px 0px 5px;
+    margin: 30px 0px 0px 5px;
 }
 
 .TaxiTitle>:any-link:hover{
@@ -193,10 +167,11 @@ body {
 }
 
 input[type=text] {
+    width: 30%;
     padding: 3px 5px;
     border: 1px solid darkgray;
     border-radius: 4px;
-    margin: 0px -450px 0px 10px;
+    margin: 0px -450px 15px 0px;
 }
 
 button {
@@ -220,37 +195,60 @@ button:hover{
     margin-left: 5px;
 }
 
-.BusTitle {
-    display: flex;
-    position:relative;
-    border: none;
-    width: 80%;
-    margin-bottom: 2%;
-    margin-top: 3%;
-}
-
-label{
-    font-size: 12px;
-    margin-left: 30%;
-}
-
-#bus-selector{
-    font-size: 12px;
-    width: 50%;
-    margin-left: 1%;
-    margin-right: -20%;
+#selector {
+    display: block;
+    width: 30%;
     padding: 3px 5px;
     border: 1px solid darkgray;
     border-radius: 4px;
+    margin-bottom: 2%;
+    margin-top: 5px;
 }
 
-#Map {
-    width: 85px;
+#selectTitle {
+    margin-left: 0;
+    font-size: 13px;
 }
 
-#List {
-    width: 78px;
-    margin-left: 5px;
+.taxi-list {
+    width:100%;
+    text-align: left;
+    margin-top: 2%;
+    font-size: 16px;
+    border-collapse: collapse;
+}
+
+.taxi-list h3{
+    margin-bottom: 1%;
+    margin-left: 10%;
+    letter-spacing: 1px;
+}
+
+.taxi-list td, .taxi-list th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.taxi-list tr:nth-child(even){
+    background-color: #faf6e2a0;
+}
+
+.taxi-list tr:nth-child(odd){
+    background-color: rgba(255, 255, 255, 0.673);
+}
+
+.taxi-list tr:hover {
+    background-color: rgb(235, 234, 234);
+}
+
+.taxi-list th {
+    white-space:nowrap;
+    padding: 12px 20px;
+    text-align: left;
+    background-color: #820C0C;
+    color: white;
+    font-size: 15px;
+
 }
 
 
@@ -299,7 +297,6 @@ label{
         width:100%;
         height: 40px;
         justify-content:space-evenly;
-        /* margin-top: 5%; */
         margin: 0 auto;
     }
     
@@ -309,11 +306,25 @@ label{
     }
     
     .tab-selection>div .active{
-        font-size: 24px;
+        font-size: 18px;
         color: #C00D0D;
         font-weight: bold;
         text-shadow: 2px 2px lightgray;
     }
+
+    .tab-container {
+        display:block;
+        margin-top: -100%;
+        margin-left: 0;
+        padding: 0 10%;
+        min-height: 42vh;
+    }
+
+    .Display {
+        margin-left: -10%;
+        padding-right: 17%;
+    }
+    
     
     .Footer {
         position: static;
@@ -353,7 +364,8 @@ label{
     }
     
     .leaflet-container {
-        width: 100%;
+        justify-content: center;
+        width: 120%;
         height: 200px;
         background: none;
         margin-bottom: 15%;
@@ -370,6 +382,11 @@ label{
     .All-list td, .All-list th {
         border: 1px solid #ddd;
         padding: 8px;
+    }
+
+    .taxi-list td {
+        vertical-align: bottom;
+
     }
     
     .All-list tr:nth-child(even){
@@ -388,7 +405,7 @@ label{
         text-align: left;
         background-color: #820C0C;
         color: white;
-        font-size: 12px;
+        font-size: 9.5px;
         letter-spacing: 2px;
     }
     
@@ -398,8 +415,9 @@ label{
         border: none;
         width: 100%;
         margin: 0 auto;
-        /* margin-bottom: 2%;
-        margin-top: 3%; */
+
+        margin-bottom: 5%;
+
     }
     
     .TaxiTitle h1{
@@ -412,12 +430,14 @@ label{
     .TaxiTitle>:any-link{
         font-size: 12px;
         padding: -10%;
-        margin: 0px -85px 0px 95px;
+        margin: 0px -75px 0px 85px;
     }
     
     input[type=text] {
-        width: 55%;
-        padding: 3px 5px;
+        width: 52%;
+        font-size: 10px;
+        padding: 5px 5px;
+
         border: 1px solid darkgray;
         border-radius: 4px;
         margin: 25px -450px 20px 0px;
@@ -426,23 +446,36 @@ label{
     button {
         background-color: #820C0C;
         color: white;
-        padding: 3px 10px;
+        padding: 5px 5px;
         border-radius: 4px;
         border: none;
+        font-size: 10px;
+    }
+
+    #search {
+        margin-left: 455px;
     }
     
-    .BusTitle {
+    #reset {
+        margin-left: 4px;
+    }
+
+    #selector {
         display: block;
-        position:relative;
-        justify-content: center;
-        width: 100%;
-        margin-bottom: 2%;
-        margin-top: 3%;
+        width: 120%;
+        padding: 3px 5px;
+        border: 1px solid darkgray;
+        border-radius: 4px;
+        margin-bottom: 7%;
+        margin-top: 5px;
     }
     
-    label{
+    #selectTitle {
+        margin-left: 0;
+        margin-top: 5%;
+        text-align: center;
         font-size: 12px;
-        margin: 0 auto;
     }
+    
 
 }

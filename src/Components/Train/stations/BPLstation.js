@@ -1,28 +1,41 @@
 import React, { useState, useEffect } from "react";
-import API from "../API"
+import API from "../API";
 
 const BPLstation = () => {
-    const [BPL, setBPL] = useState([]);
+  const [BPL, setBPL] = useState([]);
 
-    const listBPL = async () => {
-        const { data } = await API.get("/PCDRealTime", { params: { TrainLine: "BPL" } });
-        setBPL(data.value);
-        // console.log(data.value);
-    };
+  const listBPL = async () => {
+    const { data } = await API.get("/PCDRealTime", {
+      params: { TrainLine: "BPL" },
+    });
+    setBPL(data.value);
+    // console.log(data.value);
+  };
 
-    useEffect(() => {
-        listBPL()
-    }, []);
+  useEffect(() => {
+    listBPL();
+  }, []);
 
-    return (
-        <>
-            <ul>
-                {BPL.map((o) => {
-                    return <li>{o.Station} - {o.CrowdLevel}</li>;
-                })}
-            </ul>
-        </>
-    )
-}
+  return (
+    <div className="taxi-list">
+      <table>
+        <tbody>
+          <tr>
+            <th> Station Code </th>
+            <th> Crowd Level </th>
+          </tr>
+          {BPL.map((o) => {
+            return (
+              <tr key={o.Station}>
+                <td>{o.Station}</td>
+                <td>{o.CrowdLevel}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  );
+};
 
 export default BPLstation;

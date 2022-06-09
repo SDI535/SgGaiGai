@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import LTAAPI from "../API/LTAAPI";
-import { Switch, Route, NavLink } from "react-router-dom";
 import TaxiList from "./TaxiList";
 import TaxiMap from "./TaxiMap";
-import SearchForm from "./SearchForm";
+import SearchForm from "../../Components/Form/SearchForm";
 
-const Taxi = () => {
+const Taxi = ({ isListView }) => {
   const [taxiStands, setTaxiStands] = useState([]);
   const [availableTaxis, setAvailableTaxis] = useState([]);
   const [availableTaxisCount, setAvailableTaxisCount] = useState([]);
@@ -116,41 +115,29 @@ const Taxi = () => {
   }, [coordinates]);
 
   return (
-    <div>
-      <div className="Title">
-        <h1>Taxis</h1>
-        <NavLink to="/taxi/mapview" activeClassName="active">
-          Map View
-        </NavLink>
-        <NavLink to="/taxi/listview" activeClassName="active">
-          List View
-        </NavLink>
-        <SearchForm
-          setSearchParam={setSearchParam}
-          setCoordinatesParam={setCoordinatesParam}
-          resetSearch={resetSearch}
-          searchText={searchText}
+    <>
+      <SearchForm
+        setSearchParam={setSearchParam}
+        setCoordinatesParam={setCoordinatesParam}
+        resetSearch={resetSearch}
+        searchText={searchText}
+      />
+      {isListView ? (
+        <TaxiList
+          taxiStands={taxiStands}
+          filteredTaxiStands={filteredTaxiStands}
+          availableTaxisCount={availableTaxisCount}
+          coordinates={coordinates}
         />
-      </div>
-      <Switch>
-        <Route exact path="/taxi/mapview">
-          <TaxiMap
-            taxiStands={taxiStands}
-            filteredTaxiStands={filteredTaxiStands}
-            availableTaxisCount={availableTaxisCount}
-            coordinates={coordinates}
-          />
-        </Route>
-        <Route path="/taxi/listview">
-          <TaxiList
-            taxiStands={taxiStands}
-            filteredTaxiStands={filteredTaxiStands}
-            availableTaxisCount={availableTaxisCount}
-            coordinates={coordinates}
-          />
-        </Route>
-      </Switch>
-    </div>
+      ) : (
+        <TaxiMap
+          taxiStands={taxiStands}
+          filteredTaxiStands={filteredTaxiStands}
+          availableTaxisCount={availableTaxisCount}
+          coordinates={coordinates}
+        />
+      )}
+    </>
   );
 };
 
