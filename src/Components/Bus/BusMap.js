@@ -33,13 +33,13 @@ const BusMap = (props) => {
         roadName: x.RoadName,
       }));
       setBusStopLocation(list);
-      console.log("I am triggered", count, counting);
+      // console.log("I am triggered", count, counting);
     };
     changeData();
   }, [counting]);
 
   useEffect(() => {
-    console.log("I should be triggered next", count, counting);
+    // console.log("I should be triggered next", count, counting);
     UpdateMarker();
   }, [counting]);
 
@@ -64,7 +64,6 @@ const BusMap = (props) => {
 
   return (
     <>
-      <div> Selected Value: {selectedValue} </div>
       <div className="leaflet-container">
         <MapContainer center={center} zoom={11} scrollWheelZoom={false}>
           <TileLayer
