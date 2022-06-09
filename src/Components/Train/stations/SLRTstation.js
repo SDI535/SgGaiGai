@@ -1,12 +1,12 @@
 import { nanoid } from "nanoid";
 import React, { useState, useEffect } from "react";
-import API from "../API";
+import LTAAPI from "../../API/LTAAPI";
 import mrtdata from "../data/TrainStation.json";
 
 const SLRTstation = () => {
   const [SLRT, setSLRT] = useState([]);
   const listSLRT = async () => {
-    const { data } = await API.get("/PCDRealTime", {
+    const { data } = await LTAAPI.get("/PCDRealTime", {
       params: { TrainLine: "SLRT" },
     });
     setSLRT(data.value);

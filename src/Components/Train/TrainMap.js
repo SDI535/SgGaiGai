@@ -17,13 +17,13 @@ import greenpin from "./data/green.png";
 import greypin from "./data/grey.png";
 import purplepin from "./data/purple.png";
 import redpin from "./data/red.png";
-import API from "./API";
+import LTAAPI from "../API/LTAAPI";
 import { nanoid } from "nanoid";
 
 function TrainMap({ selectedValue }) {
   // const [Traindensity, setTraindensity] = useState([]);
   // const listTraindensity = async () => {
-  //   const { data } = await API.get("/PCDRealTime", { params: { TrainLine: selectedValue } });
+  //   const { data } = await LTAAPI.get("/PCDRealTime", { params: { TrainLine: selectedValue } });
   //   setTraindensity(data.value);
   // };
   // useEffect(() => {
@@ -42,43 +42,43 @@ function TrainMap({ selectedValue }) {
   const [TraindensityPLRT, setTraindensityPLRT] = useState([]);
 
   const listTraindensityCCL = async () => {
-    const { data } = await API.get("/PCDRealTime", { params: { TrainLine: "CCL" } });
+    const { data } = await LTAAPI.get("/PCDRealTime", { params: { TrainLine: "CCL" } });
     setTraindensityCCL(data.value);
   };
   const listTraindensityCEL = async () => {
-    const { data } = await API.get("/PCDRealTime", { params: { TrainLine: "CEL" } });
+    const { data } = await LTAAPI.get("/PCDRealTime", { params: { TrainLine: "CEL" } });
     setTraindensityCEL(data.value);
   };
   const listTraindensityCGL = async () => {
-    const { data } = await API.get("/PCDRealTime", { params: { TrainLine: "CGL" } });
+    const { data } = await LTAAPI.get("/PCDRealTime", { params: { TrainLine: "CGL" } });
     setTraindensityCGL(data.value);
   };
   const listTraindensityDTL = async () => {
-    const { data } = await API.get("/PCDRealTime", { params: { TrainLine: "DTL" } });
+    const { data } = await LTAAPI.get("/PCDRealTime", { params: { TrainLine: "DTL" } });
     setTraindensityDTL(data.value);
   };
   const listTraindensityEWL = async () => {
-    const { data } = await API.get("/PCDRealTime", { params: { TrainLine: "EWL" } });
+    const { data } = await LTAAPI.get("/PCDRealTime", { params: { TrainLine: "EWL" } });
     setTraindensityEWL(data.value);
   };
   const listTraindensityNEL = async () => {
-    const { data } = await API.get("/PCDRealTime", { params: { TrainLine: "NEL" } });
+    const { data } = await LTAAPI.get("/PCDRealTime", { params: { TrainLine: "NEL" } });
     setTraindensityNEL(data.value);
   };
   const listTraindensityNSL = async () => {
-    const { data } = await API.get("/PCDRealTime", { params: { TrainLine: "NSL" } });
+    const { data } = await LTAAPI.get("/PCDRealTime", { params: { TrainLine: "NSL" } });
     setTraindensityNSL(data.value);
   };
   const listTraindensityBPL = async () => {
-    const { data } = await API.get("/PCDRealTime", { params: { TrainLine: "BPL" } });
+    const { data } = await LTAAPI.get("/PCDRealTime", { params: { TrainLine: "BPL" } });
     setTraindensityBPL(data.value);
   };
   const listTraindensitySLRT = async () => {
-    const { data } = await API.get("/PCDRealTime", { params: { TrainLine: "SLRT" } });
+    const { data } = await LTAAPI.get("/PCDRealTime", { params: { TrainLine: "SLRT" } });
     setTraindensitySLRT(data.value);
   };
   const listTraindensityPLRT = async () => {
-    const { data } = await API.get("/PCDRealTime", { params: { TrainLine: "PLRT" } });
+    const { data } = await LTAAPI.get("/PCDRealTime", { params: { TrainLine: "PLRT" } });
     setTraindensityPLRT(data.value);
   };
 

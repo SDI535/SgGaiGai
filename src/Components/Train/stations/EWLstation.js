@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect } from "react";
-import API from "../API";
+import LTAAPI from "../../API/LTAAPI";
 import mrtdata from "../data/TrainStation.json";
 import { nanoid } from "nanoid";
 
@@ -9,14 +8,14 @@ const EWLstation = () => {
   const [EWL, setEWL] = useState([]);
 
   const listCGL = async () => {
-    const { data } = await API.get("/PCDRealTime", {
+    const { data } = await LTAAPI.get("/PCDRealTime", {
       params: { TrainLine: "CGL" },
     });
     setCGL(data.value);
     // console.log(data.value);
   };
   const listEWL = async () => {
-    const { data } = await API.get("/PCDRealTime", {
+    const { data } = await LTAAPI.get("/PCDRealTime", {
       params: { TrainLine: "EWL" },
     });
     setEWL(data.value);

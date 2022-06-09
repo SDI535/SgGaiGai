@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import API from "../API";
+import LTAAPI from "../../API/LTAAPI";
 import mrtdata from "../data/TrainStation.json";
 import { nanoid } from "nanoid";
 
 const BPLstation = () => {
   const [BPL, setBPL] = useState([]);
   const listBPL = async () => {
-    const { data } = await API.get("/PCDRealTime", {
+    const { data } = await LTAAPI.get("/PCDRealTime", {
       params: { TrainLine: "BPL" },
     });
     setBPL(data.value);

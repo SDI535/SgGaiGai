@@ -1,12 +1,12 @@
 import { nanoid } from "nanoid";
 import React, { useState, useEffect } from "react";
-import API from "../API";
+import LTAAPI from "../../API/LTAAPI";
 import mrtdata from "../data/TrainStation.json";
 
 const NELstation = () => {
   const [NEL, setNEL] = useState([]);
   const listNEL = async () => {
-    const { data } = await API.get("/PCDRealTime", {
+    const { data } = await LTAAPI.get("/PCDRealTime", {
       params: { TrainLine: "NEL" },
     });
     setNEL(data.value);

@@ -1,5 +1,5 @@
   import React, { useState, useEffect } from "react";
-  import API from "../API";
+  import LTAAPI from "../../API/LTAAPI";
   import mrtdata from "../data/TrainStation.json";
   import { nanoid } from "nanoid";
   
@@ -8,14 +8,14 @@
     const [CEL, setCEL] = useState([]);
   
     const listCCL = async () => {
-      const { data } = await API.get("/PCDRealTime", {
+      const { data } = await LTAAPI.get("/PCDRealTime", {
         params: { TrainLine: "CCL" },
       });
       setCCL(data.value);
       console.log(data.value);
     };
     const listCEL = async () => {
-      const { data } = await API.get("/PCDRealTime", {
+      const { data } = await LTAAPI.get("/PCDRealTime", {
         params: { TrainLine: "CEL" },
       });
       setCEL(data.value);
