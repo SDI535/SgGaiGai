@@ -25,26 +25,26 @@ function Header() {
 
           <div class="tab-selection">
             <div>
-              <NavLink activeClassName="active" to="/Bus">
+              <NavLink activeClassName="active" to="/Bus/mapview">
                 Bus
               </NavLink>
             </div>
 
 
             <div>
-              <NavLink activeClassName="active" to="/Car">
+              <NavLink activeClassName="active" to="/Car/mapview">
                 Car
               </NavLink>
             </div>
 
             <div>
-              <NavLink activeClassName="active" to="/Taxi">
+              <NavLink activeClassName="active" to="/Taxi/mapview">
                 Taxi
               </NavLink>
             </div>
 
             <div>
-              <NavLink activeClassName="active" to="/Train">
+              <NavLink activeClassName="active" to="/Train/mapview">
                 Train
               </NavLink>
             </div>

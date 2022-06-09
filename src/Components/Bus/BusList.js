@@ -13,7 +13,7 @@ const BusList = (props) => {
       setBusStops(list);
     };
     changeData();
-  }, [busStops]);
+  }, [props.count]);
 
   return (
     <div className="taxi-list">

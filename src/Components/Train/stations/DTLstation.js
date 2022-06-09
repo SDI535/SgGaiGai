@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import API from "../API";
+import { nanoid } from "nanoid";
 
 const DTLstation = () => {
   const [DTL, setDTL] = useState([]);
@@ -26,7 +27,7 @@ const DTLstation = () => {
           </tr>
           {DTL.map((o) => {
             return (
-              <tr key={o.Station}>
+              <tr key={nanoid()}>
                 <td>{o.Station}</td>
                 <td>{o.CrowdLevel}</td>
               </tr>

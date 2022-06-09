@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import API from "../API";
+import { nanoid } from "nanoid";
 
 const EWLstation = () => {
   const [CGL, setCGL] = useState([]);
@@ -35,7 +36,7 @@ const EWLstation = () => {
           </tr>
           {CGL.map((o) => {
             return (
-              <tr key={o.Station}>
+              <tr key={nanoid()}>
                 <td>{o.Station}</td>
                 <td>{o.CrowdLevel}</td>
               </tr>
@@ -43,7 +44,7 @@ const EWLstation = () => {
           })}
           {EWL.map((o) => {
             return (
-              <tr key={o.Station}>
+              <tr key={nanoid()}>
                 <td>{o.Station}</td>
                 <td>{o.CrowdLevel}</td>
               </tr>
