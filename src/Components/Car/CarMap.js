@@ -1,7 +1,7 @@
-import React, {useRef, useEffect, useState} from "react";
-import L from "leaflet";
+import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "./car.css"
+import { nanoid } from "nanoid";
 
 const CarMap = (props) => {
 
@@ -12,7 +12,7 @@ const CarMap = (props) => {
 
         return(
             <Marker
-              key={x.CarParkID}
+              key={nanoid()}
               position={[latitude, longitude]}
             >
                 <Popup>

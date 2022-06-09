@@ -1,9 +1,9 @@
 import React from "react";
 
-const CarList = ({ carparkList, filteredCarparkList }) => {
-  const fullCarparkList = carparkList.map((carparkList, key) => {
+const CarList = ({ carparkList }) => {
+  const fullCarparkList = carparkList.map((carparkList, carparkLists) => {
     return (
-      <tr key={key}>
+      <tr key={carparkLists}>
         <td>{carparkList.Development}</td>
         <td>{carparkList.AvailableLots}</td>
       </tr>
