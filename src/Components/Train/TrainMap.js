@@ -17,8 +17,104 @@ import greenpin from "./data/green.png";
 import greypin from "./data/grey.png";
 import purplepin from "./data/purple.png";
 import redpin from "./data/red.png";
+import API from "./API";
 
 function TrainMap({ selectedValue }) {
+  // const [Traindensity, setTraindensity] = useState([]);
+  // const listTraindensity = async () => {
+  //   const { data } = await API.get("/PCDRealTime", { params: { TrainLine: selectedValue } });
+  //   setTraindensity(data.value);
+  // };
+  // useEffect(() => {
+  //   listTraindensity()
+  // }, []);
+  // Data Extraction from LTA
+  const [TraindensityCCL, setTraindensityCCL] = useState([]);
+  const [TraindensityCEL, setTraindensityCEL] = useState([]);
+  const [TraindensityCGL, setTraindensityCGL] = useState([]);
+  const [TraindensityDTL, setTraindensityDTL] = useState([]);
+  const [TraindensityEWL, setTraindensityEWL] = useState([]);
+  const [TraindensityNEL, setTraindensityNEL] = useState([]);
+  const [TraindensityNSL, setTraindensityNSL] = useState([]);
+  const [TraindensityBPL, setTraindensityBPL] = useState([]);
+  const [TraindensitySLRT, setTraindensitySLRT] = useState([]);
+  const [TraindensityPLRT, setTraindensityPLRT] = useState([]);
+
+  const listTraindensityCCL = async () => {
+    const { data } = await API.get("/PCDRealTime", { params: { TrainLine: "CCL" } });
+    setTraindensityCCL(data.value);
+  };
+  const listTraindensityCEL = async () => {
+    const { data } = await API.get("/PCDRealTime", { params: { TrainLine: "CEL" } });
+    setTraindensityCEL(data.value);
+  };
+  const listTraindensityCGL = async () => {
+    const { data } = await API.get("/PCDRealTime", { params: { TrainLine: "CGL" } });
+    setTraindensityCGL(data.value);
+  };
+  const listTraindensityDTL = async () => {
+    const { data } = await API.get("/PCDRealTime", { params: { TrainLine: "DTL" } });
+    setTraindensityDTL(data.value);
+  };
+  const listTraindensityEWL = async () => {
+    const { data } = await API.get("/PCDRealTime", { params: { TrainLine: "EWL" } });
+    setTraindensityEWL(data.value);
+  };
+  const listTraindensityNEL = async () => {
+    const { data } = await API.get("/PCDRealTime", { params: { TrainLine: "NEL" } });
+    setTraindensityNEL(data.value);
+  };
+  const listTraindensityNSL = async () => {
+    const { data } = await API.get("/PCDRealTime", { params: { TrainLine: "NSL" } });
+    setTraindensityNSL(data.value);
+  };
+  const listTraindensityBPL = async () => {
+    const { data } = await API.get("/PCDRealTime", { params: { TrainLine: "BPL" } });
+    setTraindensityBPL(data.value);
+  };
+  const listTraindensitySLRT = async () => {
+    const { data } = await API.get("/PCDRealTime", { params: { TrainLine: "SLRT" } });
+    setTraindensitySLRT(data.value);
+  };
+  const listTraindensityPLRT = async () => {
+    const { data } = await API.get("/PCDRealTime", { params: { TrainLine: "PLRT" } });
+    setTraindensityPLRT(data.value);
+  };
+
+  useEffect(() => {
+    listTraindensityCCL()
+    listTraindensityCEL()
+    listTraindensityCGL()
+    listTraindensityDTL()
+    listTraindensityEWL()
+    listTraindensityNEL()
+    listTraindensityNSL()
+    listTraindensityBPL()
+    listTraindensitySLRT()
+    listTraindensityPLRT()
+  }, []);
+
+  const Traindensity = [...TraindensityCCL, ...TraindensityCEL, ...TraindensityCGL, ...TraindensityDTL, ...TraindensityEWL, ...TraindensityNEL, ...TraindensityNSL, ...TraindensityBPL, ...TraindensitySLRT, ...TraindensityPLRT]
+
+  // console.log("Traindensity", Traindensity)
+
+  // Combining GEOJSON and LTA Data
+  const geodata2 = mrtdata.features;
+  geodata2.forEach(element => {
+    element.properties.LTA = ""
+  });
+  let sortedgeodata = []
+  for (let i = 0; i < geodata2.length; i++) {
+    for (let j = 0; j < Traindensity.length; j++) {
+      if (geodata2[i].properties.STN_NO === Traindensity[j].Station) {
+        sortedgeodata.push(geodata2[i]);
+        const datalength = sortedgeodata.length - 1
+        sortedgeodata[datalength].properties.LTA = Traindensity[j].CrowdLevel;
+      }
+    }
+  }
+  // console.log("sortedgeodata", sortedgeodata)
+
   //All Icons
   var orangeicon = L.icon({
     iconUrl: orangepin,
@@ -52,7 +148,7 @@ function TrainMap({ selectedValue }) {
   });
 
   //Filtered Data
-  const geodata = mrtdata.features;
+  const geodata = sortedgeodata;
   const filteredCCL = geodata
     .filter((geodata) => geodata.properties.STN_NO.match("CC"))
     .map((geodata) => geodata);
@@ -89,7 +185,6 @@ function TrainMap({ selectedValue }) {
   const filteredPLRT1 = geodata
     .filter((geodata) => geodata.properties.STN_NO.match("PTC"))
     .map((geodata) => geodata);
-
   const filteredPLRT2 = geodata
     .filter((geodata) => geodata.properties.STN_NO.match("PW"))
     .map((geodata) => geodata);
@@ -109,6 +204,7 @@ function TrainMap({ selectedValue }) {
   const bplMarkers = filteredBPL.map((station) => {
     const stationName = station.properties.STN_NAME;
     const stationNum = station.properties.STN_NO;
+    const stationDen = station.properties.LTA;
     const stationLat = station.geometry.coordinates[1];
     const stationLng = station.geometry.coordinates[0];
     return (
@@ -120,6 +216,7 @@ function TrainMap({ selectedValue }) {
         <Popup>
           <h3>{stationName}</h3>
           <p>{stationNum}</p>
+          <p>Platform Density: {stationDen}</p>
         </Popup>
       </Marker>
     );
@@ -129,6 +226,7 @@ function TrainMap({ selectedValue }) {
   const cclMarkers = filteredCCL.map((station) => {
     const stationName = station.properties.STN_NAME;
     const stationNum = station.properties.STN_NO;
+    const stationDen = station.properties.LTA;
     const stationLat = station.geometry.coordinates[1];
     const stationLng = station.geometry.coordinates[0];
     return (
@@ -140,6 +238,7 @@ function TrainMap({ selectedValue }) {
         <Popup>
           <h3>{stationName}</h3>
           <p>{stationNum}</p>
+          <p>Platform Density: {stationDen}</p>
         </Popup>
       </Marker>
     );
@@ -149,6 +248,7 @@ function TrainMap({ selectedValue }) {
   const celMarkers = filteredCEL.map((station) => {
     const stationName = station.properties.STN_NAME;
     const stationNum = station.properties.STN_NO;
+    const stationDen = station.properties.LTA;
     const stationLat = station.geometry.coordinates[1];
     const stationLng = station.geometry.coordinates[0];
     return (
@@ -160,6 +260,7 @@ function TrainMap({ selectedValue }) {
         <Popup>
           <h3>{stationName}</h3>
           <p>{stationNum}</p>
+          <p>Platform Density: {stationDen}</p>
         </Popup>
       </Marker>
     );
@@ -168,6 +269,7 @@ function TrainMap({ selectedValue }) {
   const cglMarkers = filteredCGL.map((station) => {
     const stationName = station.properties.STN_NAME;
     const stationNum = station.properties.STN_NO;
+    const stationDen = station.properties.LTA;
     const stationLat = station.geometry.coordinates[1];
     const stationLng = station.geometry.coordinates[0];
     return (
@@ -179,6 +281,7 @@ function TrainMap({ selectedValue }) {
         <Popup>
           <h3>{stationName}</h3>
           <p>{stationNum}</p>
+          <p>Platform Density: {stationDen}</p>
         </Popup>
       </Marker>
     );
@@ -187,6 +290,7 @@ function TrainMap({ selectedValue }) {
   const dtlMarkers = filteredDTL.map((station) => {
     const stationName = station.properties.STN_NAME;
     const stationNum = station.properties.STN_NO;
+    const stationDen = station.properties.LTA;
     const stationLat = station.geometry.coordinates[1];
     const stationLng = station.geometry.coordinates[0];
     return (
@@ -198,6 +302,7 @@ function TrainMap({ selectedValue }) {
         <Popup>
           <h3>{stationName}</h3>
           <p>{stationNum}</p>
+          <p>Platform Density: {stationDen}</p>
         </Popup>
       </Marker>
     );
@@ -206,6 +311,7 @@ function TrainMap({ selectedValue }) {
   const ewlMarkers = filteredEWL.map((station) => {
     const stationName = station.properties.STN_NAME;
     const stationNum = station.properties.STN_NO;
+    const stationDen = station.properties.LTA;
     const stationLat = station.geometry.coordinates[1];
     const stationLng = station.geometry.coordinates[0];
     return (
@@ -217,6 +323,7 @@ function TrainMap({ selectedValue }) {
         <Popup>
           <h3>{stationName}</h3>
           <p>{stationNum}</p>
+          <p>Platform Density: {stationDen}</p>
         </Popup>
       </Marker>
     );
@@ -226,6 +333,7 @@ function TrainMap({ selectedValue }) {
   const nelMarkers = filteredNEL.map((station) => {
     const stationName = station.properties.STN_NAME;
     const stationNum = station.properties.STN_NO;
+    const stationDen = station.properties.LTA;
     const stationLat = station.geometry.coordinates[1];
     const stationLng = station.geometry.coordinates[0];
     return (
@@ -237,6 +345,7 @@ function TrainMap({ selectedValue }) {
         <Popup>
           <h3>{stationName}</h3>
           <p>{stationNum}</p>
+          <p>Platform Density: {stationDen}</p>
         </Popup>
       </Marker>
     );
@@ -245,6 +354,7 @@ function TrainMap({ selectedValue }) {
   const nslMarkers = filteredNSL.map((station) => {
     const stationName = station.properties.STN_NAME;
     const stationNum = station.properties.STN_NO;
+    const stationDen = station.properties.LTA;
     const stationLat = station.geometry.coordinates[1];
     const stationLng = station.geometry.coordinates[0];
     return (
@@ -256,6 +366,7 @@ function TrainMap({ selectedValue }) {
         <Popup>
           <h3>{stationName}</h3>
           <p>{stationNum}</p>
+          <p>Platform Density: {stationDen}</p>
         </Popup>
       </Marker>
     );
@@ -265,6 +376,7 @@ function TrainMap({ selectedValue }) {
   const plrt1Markers = filteredPLRT1.map((station) => {
     const stationName = station.properties.STN_NAME;
     const stationNum = station.properties.STN_NO;
+    const stationDen = station.properties.LTA;
     const stationLat = station.geometry.coordinates[1];
     const stationLng = station.geometry.coordinates[0];
     return (
@@ -276,6 +388,7 @@ function TrainMap({ selectedValue }) {
         <Popup>
           <h3>{stationName}</h3>
           <p>{stationNum}</p>
+          <p>Platform Density: {stationDen}</p>
         </Popup>
       </Marker>
     );
@@ -284,6 +397,7 @@ function TrainMap({ selectedValue }) {
   const plrt2Markers = filteredPLRT2.map((station) => {
     const stationName = station.properties.STN_NAME;
     const stationNum = station.properties.STN_NO;
+    const stationDen = station.properties.LTA;
     const stationLat = station.geometry.coordinates[1];
     const stationLng = station.geometry.coordinates[0];
     return (
@@ -295,6 +409,7 @@ function TrainMap({ selectedValue }) {
         <Popup>
           <h3>{stationName}</h3>
           <p>{stationNum}</p>
+          <p>Platform Density: {stationDen}</p>
         </Popup>
       </Marker>
     );
@@ -304,6 +419,7 @@ function TrainMap({ selectedValue }) {
   const plrt3Markers = filteredPLRT3.map((station) => {
     const stationName = station.properties.STN_NAME;
     const stationNum = station.properties.STN_NO;
+    const stationDen = station.properties.LTA;
     const stationLat = station.geometry.coordinates[1];
     const stationLng = station.geometry.coordinates[0];
     return (
@@ -315,6 +431,7 @@ function TrainMap({ selectedValue }) {
         <Popup>
           <h3>{stationName}</h3>
           <p>{stationNum}</p>
+          <p>Platform Density: {stationDen}</p>
         </Popup>
       </Marker>
     );
@@ -324,6 +441,7 @@ function TrainMap({ selectedValue }) {
   const slrt1Markers = filteredSLRT1.map((station) => {
     const stationName = station.properties.STN_NAME;
     const stationNum = station.properties.STN_NO;
+    const stationDen = station.properties.LTA;
     const stationLat = station.geometry.coordinates[1];
     const stationLng = station.geometry.coordinates[0];
     return (
@@ -335,6 +453,7 @@ function TrainMap({ selectedValue }) {
         <Popup>
           <h3>{stationName}</h3>
           <p>{stationNum}</p>
+          <p>Platform Density: {stationDen}</p>
         </Popup>
       </Marker>
     );
@@ -344,6 +463,7 @@ function TrainMap({ selectedValue }) {
   const slrt2Markers = filteredSLRT2.map((station) => {
     const stationName = station.properties.STN_NAME;
     const stationNum = station.properties.STN_NO;
+    const stationDen = station.properties.LTA;
     const stationLat = station.geometry.coordinates[1];
     const stationLng = station.geometry.coordinates[0];
     return (
@@ -355,6 +475,7 @@ function TrainMap({ selectedValue }) {
         <Popup>
           <h3>{stationName}</h3>
           <p>{stationNum}</p>
+          <p>Platform Density: {stationDen}</p>
         </Popup>
       </Marker>
     );
@@ -364,6 +485,7 @@ function TrainMap({ selectedValue }) {
   const slrt3Markers = filteredSLRT3.map((station) => {
     const stationName = station.properties.STN_NAME;
     const stationNum = station.properties.STN_NO;
+    const stationDen = station.properties.LTA;
     const stationLat = station.geometry.coordinates[1];
     const stationLng = station.geometry.coordinates[0];
     return (
@@ -375,6 +497,7 @@ function TrainMap({ selectedValue }) {
         <Popup>
           <h3>{stationName}</h3>
           <p>{stationNum}</p>
+          <p>Platform Density: {stationDen}</p>
         </Popup>
       </Marker>
     );

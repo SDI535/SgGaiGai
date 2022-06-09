@@ -28,7 +28,22 @@
             },
             "properties": {
                 "STN_NAME": "PAYA LEBAR MRT STATION",
-                "STN_NO": "EW8/CC9"
+                "STN_NO": "EW8"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.89227219447355,
+                    1.317369401141749,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "PAYA LEBAR MRT STATION",
+                "STN_NO": "CC9"
             }
         },
         {
@@ -43,7 +58,37 @@
             },
             "properties": {
                 "STN_NAME": "DHOBY GHAUT MRT STATION",
-                "STN_NO": "NS24/NE6/CC1"
+                "STN_NO": "NS24"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.84583316073947,
+                    1.299044203384764,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "DHOBY GHAUT MRT STATION",
+                "STN_NO": "NE6"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.84583316073947,
+                    1.299044203384764,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "DHOBY GHAUT MRT STATION",
+                "STN_NO": "CC1"
             }
         },
         {
@@ -313,7 +358,22 @@
             },
             "properties": {
                 "STN_NAME": "TAMPINES MRT STATION",
-                "STN_NO": "EW2/DT32"
+                "STN_NO": "EW2"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.94515900808285,
+                    1.3532891912813054,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "TAMPINES MRT STATION",
+                "STN_NO": "DT32"
             }
         },
         {
@@ -478,7 +538,22 @@
             },
             "properties": {
                 "STN_NAME": "SERANGOON MRT STATION",
-                "STN_NO": "NE12/CC13"
+                "STN_NO": "NE12"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.87363463482994,
+                    1.3496172245316749,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "SERANGOON MRT STATION",
+                "STN_NO": "CC13"
             }
         },
         {
@@ -493,7 +568,22 @@
             },
             "properties": {
                 "STN_NAME": "SERANGOON MRT STATION",
-                "STN_NO": "NE12/CC13"
+                "STN_NO": "NE12"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.87246307197942,
+                    1.3505310712733343,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "SERANGOON MRT STATION",
+                "STN_NO": "CC13"
             }
         },
         {
@@ -898,7 +988,22 @@
             },
             "properties": {
                 "STN_NAME": "BOTANIC GARDENS MRT STATION",
-                "STN_NO": "CC19/DT9"
+                "STN_NO": "CC19"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.81498942390154,
+                    1.3221094921518395,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "BOTANIC GARDENS MRT STATION",
+                "STN_NO": "DT9"
             }
         },
         {
@@ -958,7 +1063,37 @@
             },
             "properties": {
                 "STN_NAME": "MARINA BAY MRT STATION",
-                "STN_NO": "NS27/TE20/CE2"
+                "STN_NO": "NS27"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.85514510996322,
+                    1.2759503528157061,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "MARINA BAY MRT STATION",
+                "STN_NO": "TE20"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.85514510996322,
+                    1.2759503528157061,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "MARINA BAY MRT STATION",
+                "STN_NO": "CE2"
             }
         },
         {
@@ -988,7 +1123,22 @@
             },
             "properties": {
                 "STN_NAME": "LITTLE INDIA MRT STATION",
-                "STN_NO": "NE7/DT12"
+                "STN_NO": "NE7"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.84861049977016,
+                    1.3071673594980835,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "LITTLE INDIA MRT STATION",
+                "STN_NO": "DT12"
             }
         },
         {
@@ -1258,7 +1408,22 @@
             },
             "properties": {
                 "STN_NAME": "WOODLANDS MRT STATION",
-                "STN_NO": "NS9/TE2"
+                "STN_NO": "NS9"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.78616372611927,
+                    1.4368311613524305,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "WOODLANDS MRT STATION",
+                "STN_NO": "TE2"
             }
         },
         {
@@ -1378,7 +1543,22 @@
             },
             "properties": {
                 "STN_NAME": "PROMENADE MRT STATION",
-                "STN_NO": "CC4/DT15"
+                "STN_NO": "CC4"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.86099644353527,
+                    1.2932501664155338,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "PROMENADE MRT STATION",
+                "STN_NO": "DT15"
             }
         },
         {
@@ -1528,7 +1708,22 @@
             },
             "properties": {
                 "STN_NAME": "PAYA LEBAR MRT STATION",
-                "STN_NO": "EW8/CC9"
+                "STN_NO": "EW8"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.89304886910608,
+                    1.318113387569979,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "PAYA LEBAR MRT STATION",
+                "STN_NO": "CC9"
             }
         },
         {
@@ -1558,7 +1753,22 @@
             },
             "properties": {
                 "STN_NAME": "BUGIS MRT STATION",
-                "STN_NO": "EW12/DT14"
+                "STN_NO": "EW12"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.8558393480102,
+                    1.3006268207577478,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "BUGIS MRT STATION",
+                "STN_NO": "DT14"
             }
         },
         {
@@ -1573,7 +1783,22 @@
             },
             "properties": {
                 "STN_NAME": "NEWTON MRT STATION",
-                "STN_NO": "NS21/DT11"
+                "STN_NO": "NS21"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.83798766461918,
+                    1.312322284496346,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "NEWTON MRT STATION",
+                "STN_NO": "DT11"
             }
         },
         {
@@ -1588,7 +1813,22 @@
             },
             "properties": {
                 "STN_NAME": "BUONA VISTA MRT STATION",
-                "STN_NO": "EW21/CC22"
+                "STN_NO": "EW21"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.78994227956314,
+                    1.3072583228050314,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "BUONA VISTA MRT STATION",
+                "STN_NO": "CC22"
             }
         },
         {
@@ -1603,7 +1843,22 @@
             },
             "properties": {
                 "STN_NAME": "OUTRAM PARK MRT STATION",
-                "STN_NO": "EW16/NE3"
+                "STN_NO": "EW16"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.83944001272616,
+                    1.279797774398871,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "OUTRAM PARK MRT STATION",
+                "STN_NO": "NE3"
             }
         },
         {
@@ -1618,7 +1873,37 @@
             },
             "properties": {
                 "STN_NAME": "MARINA BAY MRT STATION",
-                "STN_NO": "NS27/TE20/CE2"
+                "STN_NO": "NS27"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.85461224831971,
+                    1.2765175161939966,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "MARINA BAY MRT STATION",
+                "STN_NO": "TE20"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.85461224831971,
+                    1.2765175161939966,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "MARINA BAY MRT STATION",
+                "STN_NO": "CE2"
             }
         },
         {
@@ -1633,7 +1918,36 @@
             },
             "properties": {
                 "STN_NAME": "DHOBY GHAUT MRT STATION",
-                "STN_NO": "NS24/NE6/CC1"
+                "STN_NO": "NS24"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.84611560214168,
+                    1.298699288085035,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "DHOBY GHAUT MRT STATION",
+                "STN_NO": "NE6"
+            }
+        },        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.84611560214168,
+                    1.298699288085035,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "DHOBY GHAUT MRT STATION",
+                "STN_NO": "CC1"
             }
         },
         {
@@ -1648,7 +1962,22 @@
             },
             "properties": {
                 "STN_NAME": "CHINATOWN MRT STATION",
-                "STN_NO": "NE4/DT19"
+                "STN_NO": "NE4"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.84347988591063,
+                    1.2843575513396164,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "CHINATOWN MRT STATION",
+                "STN_NO": "DT19"
             }
         },
         {
@@ -1663,7 +1992,22 @@
             },
             "properties": {
                 "STN_NAME": "EXPO MRT STATION",
-                "STN_NO": "CG1/DT35"
+                "STN_NO": "CG1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.96237940541049,
+                    1.3352521079355215,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "EXPO MRT STATION",
+                "STN_NO": "DT35"
             }
         },
         {
@@ -1678,7 +2022,22 @@
             },
             "properties": {
                 "STN_NAME": "RAFFLES PLACE MRT STATION",
-                "STN_NO": "EW14/NS26"
+                "STN_NO": "EW14"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.85145931527605,
+                    1.2840672709168361,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "RAFFLES PLACE MRT STATION",
+                "STN_NO": "NS26"
             }
         },
         {
@@ -1738,7 +2097,22 @@
             },
             "properties": {
                 "STN_NAME": "LITTLE INDIA MRT STATION",
-                "STN_NO": "NE7/DT12"
+                "STN_NO": "NE7"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.84984510847714,
+                    1.307155494508634,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "LITTLE INDIA MRT STATION",
+                "STN_NO": "DT12"
             }
         },
         {
@@ -1753,7 +2127,22 @@
             },
             "properties": {
                 "STN_NAME": "BOTANIC GARDENS MRT STATION",
-                "STN_NO": "CC19/DT9"
+                "STN_NO": "CC19"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.81615888843221,
+                    1.322401507237944,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "BOTANIC GARDENS MRT STATION",
+                "STN_NO": "DT9"
             }
         },
         {
@@ -1768,7 +2157,22 @@
             },
             "properties": {
                 "STN_NAME": "PROMENADE MRT STATION",
-                "STN_NO": "CC4/DT15"
+                "STN_NO": "CC4"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.8608646359553,
+                    1.2927982016269652,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "PROMENADE MRT STATION",
+                "STN_NO": "DT15"
             }
         },
         {
@@ -1783,7 +2187,22 @@
             },
             "properties": {
                 "STN_NAME": "CITY HALL MRT STATION",
-                "STN_NO": "EW13/NS25"
+                "STN_NO": "EW13"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.8526085041432,
+                    1.2929332374692004,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "CITY HALL MRT STATION",
+                "STN_NO": "NS25"
             }
         },
         {
@@ -1798,7 +2217,22 @@
             },
             "properties": {
                 "STN_NAME": "OUTRAM PARK MRT STATION",
-                "STN_NO": "EW16/NE3"
+                "STN_NO": "EW16"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.83914018144303,
+                    1.281412282654493,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "OUTRAM PARK MRT STATION",
+                "STN_NO": "NE3"
             }
         },
         {
@@ -1813,7 +2247,22 @@
             },
             "properties": {
                 "STN_NAME": "BISHAN MRT STATION",
-                "STN_NO": "NS17/CC15"
+                "STN_NO": "NS17"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.84814352687101,
+                    1.3508383853898307,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "BISHAN MRT STATION",
+                "STN_NO": "CC15"
             }
         },
         {
@@ -1828,7 +2277,22 @@
             },
             "properties": {
                 "STN_NAME": "EXPO MRT STATION",
-                "STN_NO": "CG1/DT35"
+                "STN_NO": "CG1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.96154622937273,
+                    1.334549361030716,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "EXPO MRT STATION",
+                "STN_NO": "DT35"
             }
         },
         {
@@ -2023,7 +2487,22 @@
             },
             "properties": {
                 "STN_NAME": "BISHAN MRT STATION",
-                "STN_NO": "NS17/CC15"
+                "STN_NO": "NS17"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.84922134190744,
+                    1.3512585806021555,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "BISHAN MRT STATION",
+                "STN_NO": "CC15"
             }
         },
         {
@@ -2113,7 +2592,22 @@
             },
             "properties": {
                 "STN_NAME": "HARBOURFRONT MRT STATION",
-                "STN_NO": "NE1/CC29"
+                "STN_NO": "NE1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.82145073544119,
+                    1.26545734889355,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "HARBOURFRONT MRT STATION",
+                "STN_NO": "CC29"
             }
         },
         {
@@ -2233,7 +2727,22 @@
             },
             "properties": {
                 "STN_NAME": "HARBOURFRONT MRT STATION",
-                "STN_NO": "NE1/CC29"
+                "STN_NO": "NE1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.82156643366132,
+                    1.2651641714646233,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "HARBOURFRONT MRT STATION",
+                "STN_NO": "CC29"
             }
         },
         {
@@ -2248,7 +2757,22 @@
             },
             "properties": {
                 "STN_NAME": "BUONA VISTA MRT STATION",
-                "STN_NO": "EW21/CC22"
+                "STN_NO": "EW21"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.79063266093664,
+                    1.306483702206079,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "BUONA VISTA MRT STATION",
+                "STN_NO": "CC22"
             }
         },
         {
@@ -2263,7 +2787,22 @@
             },
             "properties": {
                 "STN_NAME": "CALDECOTT MRT STATION",
-                "STN_NO": "CC17/TE9"
+                "STN_NO": "CC17"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.83954121444613,
+                    1.3376585477902705,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "CALDECOTT MRT STATION",
+                "STN_NO": "TE9"
             }
         },
         {
@@ -2278,7 +2817,22 @@
             },
             "properties": {
                 "STN_NAME": "BUGIS MRT STATION",
-                "STN_NO": "EW12/DT14"
+                "STN_NO": "EW12"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.85688639291939,
+                    1.2994506658259226,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "BUGIS MRT STATION",
+                "STN_NO": "DT14"
             }
         },
         {
@@ -2293,7 +2847,22 @@
             },
             "properties": {
                 "STN_NAME": "NEWTON MRT STATION",
-                "STN_NO": "NS21/DT11"
+                "STN_NO": "NS21"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.83808187974692,
+                    1.3135013091076488,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "NEWTON MRT STATION",
+                "STN_NO": "DT11"
             }
         },
         {
@@ -2308,7 +2877,22 @@
             },
             "properties": {
                 "STN_NAME": "CHINATOWN MRT STATION",
-                "STN_NO": "NE4/DT19"
+                "STN_NO": "NE4"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.84455749383159,
+                    1.2846275214320886,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "CHINATOWN MRT STATION",
+                "STN_NO": "DT19"
             }
         },
         {
@@ -2413,7 +2997,22 @@
             },
             "properties": {
                 "STN_NAME": "TAMPINES MRT STATION",
-                "STN_NO": "EW2/DT32"
+                "STN_NO": "EW2"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.94301596851555,
+                    1.3551430036538694,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "TAMPINES MRT STATION",
+                "STN_NO": "DT32"
             }
         },
         {
@@ -2458,7 +3057,22 @@
             },
             "properties": {
                 "STN_NAME": "MACPHERSON MRT STATION",
-                "STN_NO": "CC10/DT26"
+                "STN_NO": "CC10"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.89026149677758,
+                    1.3263680374270888,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "MACPHERSON MRT STATION",
+                "STN_NO": "DT26"
             }
         },
         {
@@ -2473,7 +3087,22 @@
             },
             "properties": {
                 "STN_NAME": "BAYFRONT MRT STATION",
-                "STN_NO": "DT16/CE1"
+                "STN_NO": "DT16"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.85907645399939,
+                    1.281871911967996,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "BAYFRONT MRT STATION",
+                "STN_NO": "CE1"
             }
         },
         {
@@ -2488,7 +3117,37 @@
             },
             "properties": {
                 "STN_NAME": "DHOBY GHAUT MRT STATION",
-                "STN_NO": "NS24/NE6/CC1"
+                "STN_NO": "NS24"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.84548639484086,
+                    1.2997033929626471,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "DHOBY GHAUT MRT STATION",
+                "STN_NO": "NE6"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.84548639484086,
+                    1.2997033929626471,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "DHOBY GHAUT MRT STATION",
+                "STN_NO": "CC1"
             }
         },
         {
@@ -2518,7 +3177,22 @@
             },
             "properties": {
                 "STN_NAME": "JURONG EAST MRT STATION",
-                "STN_NO": "EW24/NS1"
+                "STN_NO": "EW24"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.74226323339667,
+                    1.3332090241725911,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "JURONG EAST MRT STATION",
+                "STN_NO": "NS1"
             }
         },
         {
@@ -2563,7 +3237,22 @@
             },
             "properties": {
                 "STN_NAME": "ORCHARD MRT STATION",
-                "STN_NO": "NS22/TE14"
+                "STN_NO": "NS22"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.83221933077252,
+                    1.3039377458076034,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "ORCHARD MRT STATION",
+                "STN_NO": "TE14"
             }
         },
         {
@@ -2653,7 +3342,22 @@
             },
             "properties": {
                 "STN_NAME": "MACPHERSON MRT STATION",
-                "STN_NO": "CC10/DT26"
+                "STN_NO": "CC10"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.88937168307221,
+                    1.3260906197339795,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "MACPHERSON MRT STATION",
+                "STN_NO": "DT26"
             }
         },
         {
@@ -2728,7 +3432,22 @@
             },
             "properties": {
                 "STN_NAME": "WOODLANDS MRT STATION",
-                "STN_NO": "NS9/TE2"
+                "STN_NO": "NS9"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.78791746815828,
+                    1.4360746301326044,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "WOODLANDS MRT STATION",
+                "STN_NO": "TE2"
             }
         },
         {
@@ -2848,7 +3567,22 @@
             },
             "properties": {
                 "STN_NAME": "CALDECOTT MRT STATION",
-                "STN_NO": "CC17/TE9"
+                "STN_NO": "CC17"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.8401384844512,
+                    1.3373172462606397,
+                    0
+                ]
+            },
+            "properties": {
+                "STN_NAME": "CALDECOTT MRT STATION",
+                "STN_NO": "TE9"
             }
         },
         {
