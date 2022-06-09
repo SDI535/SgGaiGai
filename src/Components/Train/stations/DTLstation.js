@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import API from "../API";
 import mrtdata from "../data/TrainStation.json";
+import { nanoid } from "nanoid";
 
 const DTLstation = () => {
   const [DTL, setDTL] = useState([]);
@@ -14,7 +15,7 @@ const DTLstation = () => {
   useEffect(() => {
     listDTL();
   }, []);
-console.log(DTL);
+  console.log(DTL);
 
   // Combining GEOJSON and LTA Data
   const geodata = mrtdata.features;
@@ -44,7 +45,7 @@ console.log(DTL);
           </tr>
           {sortedgeodata.map((o) => {
             return (
-              <tr key={o.properties.STN_NO}>
+              <tr key={nanoid()}>
                 <td>{o.properties.STN_NAME}</td>
                 <td>{o.properties.STN_NO}</td>
                 <td>{o.properties.LTA}</td>

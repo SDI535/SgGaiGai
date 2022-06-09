@@ -18,6 +18,7 @@ import greypin from "./data/grey.png";
 import purplepin from "./data/purple.png";
 import redpin from "./data/red.png";
 import API from "./API";
+import { nanoid } from "nanoid";
 
 function TrainMap({ selectedValue }) {
   // const [Traindensity, setTraindensity] = useState([]);
@@ -209,7 +210,7 @@ function TrainMap({ selectedValue }) {
     const stationLng = station.geometry.coordinates[0];
     return (
       <Marker
-        key={stationNum}
+        key={nanoid()}
         position={[stationLat, stationLng]}
         icon={greyicon}
       >
@@ -231,7 +232,7 @@ function TrainMap({ selectedValue }) {
     const stationLng = station.geometry.coordinates[0];
     return (
       <Marker
-        key={stationNum}
+        key={nanoid()}
         position={[stationLat, stationLng]}
         icon={orangeicon}
       >
@@ -253,7 +254,7 @@ function TrainMap({ selectedValue }) {
     const stationLng = station.geometry.coordinates[0];
     return (
       <Marker
-        key={stationNum}
+        key={nanoid()}
         position={[stationLat, stationLng]}
         icon={orangeicon}
       >
@@ -274,7 +275,7 @@ function TrainMap({ selectedValue }) {
     const stationLng = station.geometry.coordinates[0];
     return (
       <Marker
-        key={stationNum}
+        key={nanoid()}
         position={[stationLat, stationLng]}
         icon={greenicon}
       >
@@ -295,7 +296,7 @@ function TrainMap({ selectedValue }) {
     const stationLng = station.geometry.coordinates[0];
     return (
       <Marker
-        key={stationNum}
+        key={nanoid()}
         position={[stationLat, stationLng]}
         icon={blueicon}
       >
@@ -316,7 +317,7 @@ function TrainMap({ selectedValue }) {
     const stationLng = station.geometry.coordinates[0];
     return (
       <Marker
-        key={stationNum}
+        key={nanoid()}
         position={[stationLat, stationLng]}
         icon={greenicon}
       >
@@ -338,7 +339,7 @@ function TrainMap({ selectedValue }) {
     const stationLng = station.geometry.coordinates[0];
     return (
       <Marker
-        key={stationNum}
+        key={nanoid}
         position={[stationLat, stationLng]}
         icon={purpleicon}
       >
@@ -358,11 +359,7 @@ function TrainMap({ selectedValue }) {
     const stationLat = station.geometry.coordinates[1];
     const stationLng = station.geometry.coordinates[0];
     return (
-      <Marker
-        key={stationNum}
-        position={[stationLat, stationLng]}
-        icon={redicon}
-      >
+      <Marker key={nanoid()} position={[stationLat, stationLng]} icon={redicon}>
         <Popup>
           <h3>{stationName}</h3>
           <p>{stationNum}</p>
@@ -381,7 +378,7 @@ function TrainMap({ selectedValue }) {
     const stationLng = station.geometry.coordinates[0];
     return (
       <Marker
-        key={stationNum}
+        key={nanoid()}
         position={[stationLat, stationLng]}
         icon={greyicon}
       >
@@ -402,7 +399,7 @@ function TrainMap({ selectedValue }) {
     const stationLng = station.geometry.coordinates[0];
     return (
       <Marker
-        key={stationNum}
+        key={nanoid()}
         position={[stationLat, stationLng]}
         icon={greyicon}
       >
@@ -424,7 +421,7 @@ function TrainMap({ selectedValue }) {
     const stationLng = station.geometry.coordinates[0];
     return (
       <Marker
-        key={stationNum}
+        key={nanoid()}
         position={[stationLat, stationLng]}
         icon={greyicon}
       >
@@ -468,7 +465,7 @@ function TrainMap({ selectedValue }) {
     const stationLng = station.geometry.coordinates[0];
     return (
       <Marker
-        key={stationNum}
+        key={nanoid()}
         position={[stationLat, stationLng]}
         icon={greyicon}
       >
@@ -490,7 +487,7 @@ function TrainMap({ selectedValue }) {
     const stationLng = station.geometry.coordinates[0];
     return (
       <Marker
-        key={stationNum}
+        key={nanoid()}
         position={[stationLat, stationLng]}
         icon={greyicon}
       >

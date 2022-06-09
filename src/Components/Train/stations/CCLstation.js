@@ -1,6 +1,7 @@
   import React, { useState, useEffect } from "react";
   import API from "../API";
   import mrtdata from "../data/TrainStation.json";
+  import { nanoid } from "nanoid";
   
   const CCLstation = () => {
     const [CCL, setCCL] = useState([]);
@@ -56,7 +57,7 @@
             </tr>
             {sortedgeodata.map((o) => {
               return (
-                <tr key={o.properties.STN_NO}>
+                <tr key={nanoid()}>
                   <td>{o.properties.STN_NAME}</td>
                   <td>{o.properties.STN_NO}</td>
                   <td>{o.properties.LTA}</td>

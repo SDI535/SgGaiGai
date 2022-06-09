@@ -1,3 +1,4 @@
+import { nanoid } from "nanoid";
 import React, { useState, useEffect } from "react";
 import API from "../API";
 import mrtdata from "../data/TrainStation.json";
@@ -14,7 +15,7 @@ const PLRTstation = () => {
   useEffect(() => {
     listPLRT();
   }, []);
-console.log(PLRT);
+  console.log(PLRT);
 
   // Combining GEOJSON and LTA Data
   const geodata = mrtdata.features;
@@ -44,7 +45,7 @@ console.log(PLRT);
           </tr>
           {sortedgeodata.map((o) => {
             return (
-              <tr key={o.properties.STN_NO}>
+              <tr key={nanoid()}>
                 <td>{o.properties.STN_NAME}</td>
                 <td>{o.properties.STN_NO}</td>
                 <td>{o.properties.LTA}</td>
