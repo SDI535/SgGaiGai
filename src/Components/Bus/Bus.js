@@ -5,7 +5,10 @@ import BusList from "./BusList";
 import BusMap from "./BusMap";
 
 const Bus = ({ isListView }) => {
-  const [selectedValue, setSelectedValue] = useState(" ");
+  const LOCAL_STORAGE_SELECTED_BUS_AREA_KEY = "selected.BusArea";
+  const [selectedValue, setSelectedValue] = useState(
+    JSON.parse(localStorage.getItem(LOCAL_STORAGE_SELECTED_BUS_AREA_KEY)) || 0
+  );
   const [busStops, setBusStops] = useState([]);
   const [count, setCount] = useState(1);
 
@@ -13,18 +16,25 @@ const Bus = ({ isListView }) => {
     setSelectedValue(e.target.value);
   };
 
-  useEffect(()=>{
-    setSelectedValue(0)
-    console.log("selected value is updated at the start")
-  },[]);
+  // useEffect(() => {
+  //   setSelectedValue(0);
+  //   console.log("selected value is updated at the start");
+  // }, []);
+
+  useEffect(() => {
+    localStorage.setItem(
+      LOCAL_STORAGE_SELECTED_BUS_AREA_KEY,
+      JSON.stringify(selectedValue)
+    );
+  }, [selectedValue]);
 
   useEffect(() => {
     async function fetchData() {
       const response = await LTAAPI.get(`/BusStops?$skip=${selectedValue}`);
       setBusStops(response.data.value);
       console.log(response);
-      setCount(count+1)
-      console.log("count at start", count)
+      setCount(count + 1);
+      console.log("count at start", count);
     }
     fetchData();
   }, []);
@@ -34,12 +44,11 @@ const Bus = ({ isListView }) => {
       const response = await LTAAPI.get(`/BusStops?$skip=${selectedValue}`);
       setBusStops(response.data.value);
       console.log(response);
-      setCount(count+1)
-      console.log("count after dropdown change", count)
+      setCount(count + 1);
+      console.log("count after dropdown change", count);
     }
     fetchData();
   }, [selectedValue]);
-
 
   return (
     <>
@@ -76,7 +85,11 @@ const Bus = ({ isListView }) => {
           <option value="5000">Changi</option>
         </select>
       </div>
-      {isListView ? <BusList data={busStops} count={count}/> : <BusMap data={busStops} selectedValue={selectedValue} count={count} />}
+      {isListView ? (
+        <BusList data={busStops} count={count} />
+      ) : (
+        <BusMap data={busStops} selectedValue={selectedValue} count={count} />
+      )}
     </>
   );
 };
