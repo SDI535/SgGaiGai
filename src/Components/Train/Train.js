@@ -10,10 +10,24 @@ import TrainMap from "./TrainMap";
 import TrainList from "./TrainList";
 
 function Train({ isListView }) {
-  const [selectedValue, setSelectedValue] = useState("CCL");
+  const LOCAL_STORAGE_SELECTED_TRAIN_AREA_KEY = "selected.TrainArea";
+  const [selectedValue, setSelectedValue] = useState(
+    localStorage.getItem(LOCAL_STORAGE_SELECTED_TRAIN_AREA_KEY) || "CCL"
+  );
   const handleChange = (e) => {
     setSelectedValue(e.target.value);
   };
+  useEffect(() => {
+    if (selectedValue === "ALL") {
+      localStorage.setItem(LOCAL_STORAGE_SELECTED_TRAIN_AREA_KEY, "CCL");
+    } else {
+      localStorage.setItem(
+        LOCAL_STORAGE_SELECTED_TRAIN_AREA_KEY,
+        selectedValue
+      );
+    }
+  }, [selectedValue]);
+
   return (
     <>
       <div>
