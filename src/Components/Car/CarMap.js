@@ -26,7 +26,7 @@ const CarMap = (props) => {
       <MapContainer
         center={[1.3521, 103.8198]}
         zoom={11}
-        scrollWheelZoom={false}
+        scrollWheelZoom={true}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
