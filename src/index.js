@@ -20,10 +20,10 @@ root.render(
   //   <App />
   // </React.StrictMode>
   <>
-    <Router>
+    <Router basename="/sg-gai-gai">
       <Header />
       <Switch>
-        <Redirect exact from="/" to="/Bus/mapview" />
+        <Redirect exact from="/sg-gai-gai" to="/Bus/mapview" />
         <Route path="/:tabId">
           <Body />
         </Route>
