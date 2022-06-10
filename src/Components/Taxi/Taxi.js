@@ -25,7 +25,7 @@ const Taxi = ({ isListView }) => {
     fetchData();
   }, []);
 
-  // fetch taxi available from LTA API
+  // fetch nearby taxis from LTA API
   useEffect(() => {
     const fetchAvailableTaxis = async () => {
       try {
